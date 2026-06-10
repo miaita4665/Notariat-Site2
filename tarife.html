@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ro" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tarife și Onorarii — SPN Popovici & Agachi</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="icons/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="SPN Popovici & Agachi" />
+    <link rel="manifest" href="icons/favicon/site.webmanifest" />
+    <link rel="preload" href="hero.jpg" as="image" fetchpriority="high" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Societatea Profesională Notarială Popovici & Agachi oferă servicii notariale de înaltă calitate în București, Sector 3 — autentificări, succesiuni, contracte și legalizări."
+    />
+    <meta
+      property="og:title"
+      content="Popovici & Agachi Societate Profesională Notarială"
+    />
+    <meta
+      property="og:description"
+      content="Societatea Profesională Notarială Popovici & Agachi oferă servicii notariale de înaltă calitate, combinând expertiza juridică vastă cu o abordare personalizată "
+    />
+    <meta
+      property="og:image"
+      content="https://popovicibnp.ro/social-preview.jpg"
+    />
+    <meta property="og:url" content="https://popovicibnp.ro/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              teal: { DEFAULT: "#003333", light: "#004d4d", mid: "#00403f" },
+              gold: { DEFAULT: "#f0cf6f", dark: "#c9a93e", pale: "rgba(240,207,111,0.12)" },
+              cream: { DEFAULT: "#faf8f4", mid: "#f4f1ea" },
+            },
+            fontFamily: { cinzel: ['"Cinzel"', "serif"], inter: ['"Inter"', "Arial", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <style>
+      body { font-family: "Inter", Arial, sans-serif; }
+      h1, h2, h3 { font-family: "Cinzel", serif; letter-spacing: 0.04em; }
+    </style>
+  </head>
+  <body class="bg-cream text-[#1a1a1a]">
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 right-0 bg-teal text-white p-4 z-[1000] border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 hidden"
+    >
+      <p class="text-[0.85rem] text-white/80 max-w-4xl">
+        <span id="cookie-text"
+          >Acest site folosește cookie-uri pentru a vă oferi o experiență de
+          navigare mai bună. Prin continuarea navigării sunteți de acord cu
+          utilizarea acestora.</span
+        >
+        <a
+          href="cookies.html"
+          class="text-gold underline hover:text-gold-dark"
+          id="cookie-link"
+          >Află mai multe</a
+        >.
+      </p>
+      <button
+        onclick="acceptCookies()"
+        class="bg-gold text-teal px-6 py-2 rounded text-[0.85rem] font-bold tracking-wider uppercase hover:bg-gold-dark transition-colors whitespace-nowrap"
+        id="cookie-btn"
+      >
+        Am înțeles
+      </button>
+    </div>
+    <!-- ── TOPBAR ────────────────────────────────────────────────── -->
+    <div class="bg-teal-light py-1.5 text-[0.78rem]">
+      <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <a
+          href="https://www.google.com/maps?cid=6838984055288210912"
+          target="_blank"
+          class="text-white/80 hover:text-gold transition-colors flex items-center gap-1"
+        >
+          <i class="bi bi-geo-alt-fill text-gold"></i>
+          Str. Soldat Ghiță Șerban nr. 94, et. 1, Sector 3, București
+        </a>
+      </div>
+    </div>
+    <nav
+      id="navbar"
+      class="bg-teal relative z-50 border-b border-gold/10 shadow-[0_2px_16px_rgba(0,0,0,.18)]"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3"
+      >
+        <!-- Logo -->
+        <a href="#acasa">
+          <img src="icons/logo_lung.svg" 
+          alt="SPN Popovici & Agachi" 
+          class="h-18 w-auto" 
+          width="200" height="72" />
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden lg:flex items-center gap-1">
+          
+        <div class="flex items-center gap-4">
+          <a href="index.html" class="text-white/80 hover:text-gold text-sm font-semibold uppercase tracking-wider">Înapoi la prima pagină</a>
+
+        </div>
+          <button
+            onclick="toggleLang()"
+            id="langBtn"
+            class="ml-3 border border-gold/50 text-gold hover:bg-gold hover:text-teal text-[0.7rem] font-bold tracking-widest px-2.5 py-1 rounded transition-colors"
+          >
+            EN
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" 
+          onclick="toggleMenu()" 
+          aria-label="Deschide meniul principal" 
+          class="lg:hidden flex flex-col gap-1.5 p-1"
+        >
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar1"></span>
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar2"></span>
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar3"></span>
+        </button>
+      </div>
+      </div>
+    </nav>
+
+    <section class="bg-teal text-white py-16 px-4 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-4xl mb-4" id="page-title">Onorarii și Taxe Notariale</h1>
+        <p class="text-white/70 max-w-2xl mx-auto text-sm md:text-base" id="page-subtitle">Transparență totală în calcularea costurilor actelor dumneavoastră conform legislației în vigoare.</p>
+      </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto py-16 px-4">
+      
+      <div class="bg-white p-6 rounded border border-[#e8e2d4] mb-10 shadow-sm">
+        <p class="text-sm text-[#555] leading-relaxed" id="info-text">
+          Onorariile notariale sunt stabilite și reglementate la nivel național prin <strong>Ordinul Ministrului Justiției</strong>. Acestea pot fi fixe sau procentuale (proporționale), calculate în funcție de complexitatea actului sau de valoarea tranzacției.
+        </p>
+      </div>
+
+      <h2 class="text-xl text-teal mb-4 font-semibold" id="table-title">Acte cu Tarif Fix</h2>
+      <div class="bg-white rounded border border-[#e8e2d4] overflow-hidden shadow-sm mb-12">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-teal text-white font-cinzel text-xs uppercase tracking-wider">
+            <tr>
+              <th class="p-4" id="th-1">Tipul Actului</th>
+              <th class="p-4 text-right" id="th-2">Tip Onorariu / Mod de calcul</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e8e2d4] text-[#444]">
+            <tr>
+              <td class="p-4 font-medium">Procură Specială / Judiciară</td>
+              <td class="p-4 text-right">Onorariu Fix reglementat</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Declarații (diverse tipuri)</td>
+              <td class="p-4 text-right">Onorariu Fix reglementat</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Legalizare Copie Document</td>
+              <td class="p-4 text-right">Fix per pagină</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Dată Certă pe înscrisuri</td>
+              <td class="p-4 text-right">Fix per document</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Contracte Imobiliare / Succesiuni</td>
+              <td class="p-4 text-right text-teal font-semibold">Proporțional (în funcție de valoare)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="border-l-4 border-gold bg-white p-6 rounded shadow-sm">
+        <h3 class="text-base font-semibold text-teal mb-2" id="reductions-title">Reduceri și Scutiri Legale de Onorariu</h3>
+        <p class="text-sm text-[#555] leading-relaxed" id="reductions-text">
+          Anumite categorii beneficiază de reduceri stabilite prin lege (de exemplu: minori, pensionari cu pensii minime, sau cazuri de succesiuni dezbătute în termen legal de la deces). Contactați-ne direct pentru a verifica dacă vă încadrați într-o categorie scutită sau cu reducere.
+        </p>
+      </div>
+
+    </main>
+
+    <footer class="bg-teal text-white/75 pt-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-[2fr_1fr_1.5fr] gap-12 pb-12">
+            <div>
+            <a href="#acasa" class="block">
+                <img src="icons/logo_lung.svg" 
+                    alt="SPN Popovici & Agachi" 
+                    class="h-18 w-auto" 
+                    width="200" height="72" />
+            </a>
+            <div class="flex flex-wrap items-center gap-2">
+                <a
+                href="https://anpc.ro/ce-este-sal/"
+                target="_blank"
+                rel="nofollow noopener"
+                class="block"
+                >
+                <img src="icons/anpc-sal.svg" 
+                    alt="ANPC SAL" 
+                    class="h-14 w-auto object-contain" 
+                    width="250" height="56" />
+                </a>
+                <a
+                href="https://ec.europa.eu/consumers/odr"
+                target="_blank"
+                rel="nofollow noopener"
+                class="block"
+                >
+                <img src="icons/anpc-sol.svg" 
+                    alt="ANPC SOL" 
+                    class="h-14 w-auto object-contain" 
+                    width="250" height="56" />
+                </a>
+            </div>
+            </div>
+
+            <div>
+            <h3
+                class="font-cinzel text-[0.83rem] tracking-[.13em] uppercase text-gold mb-5"
+                id="footer-menu-title"
+            >
+                Meniu
+            </h3>
+            <ul class="space-y-2">
+                <li>
+                <a
+                    href="#acasa"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-nav-1"
+                    >Acasă</a
+                >
+                </li>
+                <li>
+                <a
+                    href="#despre-noi"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-nav-2"
+                    >Despre Noi</a
+                >
+                </li>
+                <li>
+                <a
+                    href="#servicii"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-nav-3"
+                    >Servicii</a
+                >
+                </li>
+                <li>
+                <a
+                    href="#contact"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-nav-4"
+                    >Contact</a
+                >
+                </li>
+            </ul>
+            </div>
+
+            <div>
+            <h3
+                class="font-cinzel text-[0.83rem] tracking-[.13em] uppercase text-gold mb-5"
+                id="footer-info-title"
+            >
+                Informații Utile
+            </h3>
+            <ul class="space-y-2">
+                <li>
+                <a
+                    href="acte-necesare.html"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-docs"
+                    >Acte Necesare Dosare</a
+                >
+                </li>
+                <li>
+                <a
+                    href="tarife.html"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-fees"
+                    >Tarife &amp; Onorarii</a
+                >
+                </li>
+                <li>
+                <a
+                    href="tipuri-acte.html"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-types"
+                    >Ghidul Tipuri de Acte</a
+                >
+                </li>
+                <li>
+                <a
+                    href="servicii-conexe.html"
+                    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                    id="footer-translations"
+                    >Traduceri &amp; Apostile</a
+                >
+                </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/08 py-5">
+            <div
+            class="flex flex-col sm:flex-row justify-between items-center gap-4 text-[0.79rem]"
+            >
+            <span id="footer-copy"
+                >© 2026 Popovici &amp; Agachi — Toate drepturile rezervate</span
+            >
+            
+            <div class="flex flex-wrap gap-x-4 gap-y-1 justify-center text-white/45">
+                <a href="termeni.html" class="hover:text-gold transition-colors" id="footer-terms">Termeni &amp; Condiții</a>
+                <a href="cookies.html" class="hover:text-gold transition-colors" id="footer-cookies">Politica Cookies</a>
+                <a href="confidentialitate.html" class="hover:text-gold transition-colors" id="footer-privacy">Politica de Confidențialitate</a>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <a
+                href="http://www.uniuneanotarilor.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >UNNPR</a
+                >
+                <a
+                href="https://www.cnpb.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >CNPB</a
+                >
+                <a
+                href="http://www.infonot.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >INFONOT</a
+                >
+                <a
+                href="http://www.ancpi.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >ANCPI</a
+                >
+                <a
+                href="https://www.aegrm.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >AEGRM</a
+                >
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const T = {
+        ro: {
+          langBtn: "EN",
+          "page-title": "Onorarii și Taxe Notariale",
+          "page-subtitle": "Transparență totală în calcularea costurilor actelor dumneavoastră conform legislației în vigoare.",
+          "info-text": "Onorariile notariale sunt stabilite și reglementate la nivel național prin Ordinul Ministrului Justiției. Acestea pot fi fixe sau procentuale (proporționale), calculate în funcție de complexitatea actului sau de valoarea tranzacției.",
+          "table-title": "Acte cu Tarif Fix",
+          "th-1": "Tipul Actului",
+          "th-2": "Tip Onorariu / Mod de calcul",
+          "reductions-title": "Reduceri și Scutiri Legale de Onorariu",
+          "reductions-text": "Anumite categorii beneficiază de reduceri stabilite prin lege (de exemplu: minori, pensionari cu pensii minime, sau cazuri de succesiuni dezbătute în termen legal de la deces). Contactați-ne direct pentru a verifica dacă vă încadrați într-o categorie scutită sau cu reducere."
+        },
+        en: {
+          langBtn: "RO",
+          "page-title": "Notarial Fees & Taxes",
+          "page-subtitle": "Full transparency in calculating your document costs in compliance with current legislation.",
+          "info-text": "Notary fees are established and regulated nationwide by the Ministry of Justice. They can be fixed or proportional, calculated based on the complexity of the deed or the transaction value.",
+          "table-title": "Deeds with Fixed Rates",
+          "th-1": "Type of Deed",
+          "th-2": "Fee Type / Mode of Calculation",
+          "reductions-title": "Statutory Reductions & Exemptions",
+          "reductions-text": "Certain categories benefit from legally mandated reductions (e.g., minors, pensioners with minimum pensions, or estate proceedings settled within the legal timeframe). Contact us directly to check your eligibility."
+        }
+      };
+
+      let lang = localStorage.getItem("lang") || "ro";
+      function applyLang() {
+        document.getElementById("langBtn").textContent = T[lang].langBtn;
+        document.getElementById("page-title").textContent = T[lang]["page-title"];
+        document.getElementById("page-subtitle").textContent = T[lang]["page-subtitle"];
+        document.getElementById("info-text").innerHTML = T[lang]["info-text"];
+        document.getElementById("table-title").textContent = T[lang]["table-title"];
+        document.getElementById("th-1").textContent = T[lang]["th-1"];
+        document.getElementById("th-2").textContent = T[lang]["th-2"];
+        document.getElementById("reductions-title").textContent = T[lang]["reductions-title"];
+        document.getElementById("reductions-text").textContent = T[lang]["reductions-text"];
+        document.documentElement.lang = lang;
+        localStorage.setItem("lang", lang);
+      }
+      function toggleLang() { lang = lang === "ro" ? "en" : "ro"; applyLang(); }
+      applyLang();
+    </script>
+  </body>
+</html>
