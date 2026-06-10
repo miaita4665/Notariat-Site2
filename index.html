@@ -72,13 +72,13 @@
       };
     </script>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" 
+    media="print" onload="this.media='all'" 
     />
 
     <style>
-      /* Anything Tailwind can't express purely with utilities */
+      
       body {
         font-family: "Inter", Arial, sans-serif;
       }
@@ -99,7 +99,7 @@
             rgba(0, 51, 51, 0.91) 0%,
             rgba(0, 51, 51, 0.62) 60%
           ),
-          url("hero.jpg") center/cover no-repeat;
+          url("hero.webp") center/cover no-repeat;
       }
 
       /* Hero gold bottom accent */
@@ -277,11 +277,10 @@
       >
         <!-- Logo -->
         <a href="#acasa">
-          <img
-            src="icons/logo_lung.svg"
-            alt="SPN Popovici & Agachi"
-            class="h-18 w-auto"
-          />
+          <img src="icons/logo_lung.svg" 
+          alt="SPN Popovici & Agachi" 
+          class="h-18 w-auto" 
+          width="200" height="72" />
         </a>
 
         <!-- Desktop links -->
@@ -320,9 +319,9 @@
         </div>
 
         <!-- Mobile hamburger -->
-        <button
-          id="menuBtn"
-          onclick="toggleMenu()"
+        <button id="menuBtn" 
+          onclick="toggleMenu()" 
+          aria-label="Deschide meniul principal" 
           class="lg:hidden flex flex-col gap-1.5 p-1"
         >
           <span class="w-6 h-0.5 bg-gold block transition-all" id="bar1"></span>
@@ -373,7 +372,7 @@
         </button>
       </div>
     </nav>
-
+    <main>
     <!-- ── HERO ──────────────────────────────────────────────────── -->
     <section id="acasa" class="relative flex items-center py-24 px-4">
       <div class="max-w-7xl mx-auto w-full">
@@ -491,11 +490,10 @@
           <div
             class="notar-card w-full sm:w-96 text-center p-10 border border-[#e8e2d4] bg-white rounded"
           >
-            <img
-              src="icons/logo_auriu.svg"
-              alt="Notar Public"
-              class="w-13 height:auto mb-5"
-            />
+            <img src="icons/logo_auriu.svg" 
+            alt="Notar Public" 
+            class="w-13 h-auto mb-5" 
+            width="52" height="52" />
             <h3 class="font-cinzel text-[1.5rem] text-teal mb-1">
               Popovici Alexandra
             </h3>
@@ -509,10 +507,10 @@
           <div
             class="notar-card w-full sm:w-96 text-center p-10 border border-[#e8e2d4] bg-white rounded"
           >
-            <img
-              src="icons/logo_auriu.svg"
-              alt="Notar Public"
-              class="w-13 height:auto mb-5"
+            <img src="icons/logo_auriu.svg" 
+            alt="Notar Public" 
+            class="w-13 h-auto mb-5" w
+            idth="52" height="52" 
             />
             <h3 class="font-cinzel text-[1.5rem] text-teal mb-1">
               Agachi-Stratulat Sergiu
@@ -787,7 +785,7 @@
             </p>
             <div class="flex items-center gap-3">
               <div
-                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-gold-dark font-semibold text-sm flex-shrink-0"
+                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-teal font-semibold text-sm flex-shrink-0"
               >
               V.F.
               </div>
@@ -818,7 +816,7 @@
             </p>
             <div class="flex items-center gap-3">
               <div
-                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-gold-dark font-semibold text-sm flex-shrink-0"
+                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-teal font-semibold text-sm flex-shrink-0"
               >
                 A.O.
               </div>
@@ -847,7 +845,7 @@
             </p>
             <div class="flex items-center gap-3">
               <div
-                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-gold-dark font-semibold text-sm flex-shrink-0"
+                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-teal font-semibold text-sm flex-shrink-0"
               >
                 M.I.
               </div>
@@ -1150,18 +1148,17 @@
         </div>
       </div>
     </section>
-
+    </main>
     <!-- ── FOOTER ─────────────────────────────────────────────────── -->
     <footer class="bg-teal text-white/75 pt-16">
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid lg:grid-cols-[2fr_1fr_1.5fr] gap-12 pb-12">
           <div>
             <a href="#acasa" class="block">
-              <img
-                src="icons/logo_lung.svg"
-                alt="SPN Popovici & Agachi"
-                class="h-18 w-auto mb-6 object-contain"
-              />
+              <img src="icons/logo_lung.svg" 
+              alt="SPN Popovici & Agachi" 
+              class="h-18 w-auto" 
+              width="200" height="72" />
             </a>
             <div class="flex flex-wrap items-center gap-2">
               <a
@@ -1170,11 +1167,10 @@
                 rel="nofollow noopener"
                 class="block"
               >
-                <img
-                  src="https://etamade-com.github.io/anpc-sal-sol-logo/anpc-sal.svg"
-                  alt="ANPC SAL"
-                  class="h-14 w-auto object-contain"
-                />
+                <img src="icons/anpc-sal.svg" 
+                alt="ANPC SAL" 
+                class="h-14 w-auto object-contain" 
+                width="250" height="56" />
               </a>
               <a
                 href="https://ec.europa.eu/consumers/odr"
@@ -1182,11 +1178,10 @@
                 rel="nofollow noopener"
                 class="block"
               >
-                <img
-                  src="https://etamade-com.github.io/anpc-sal-sol-logo/anpc-sol.svg"
-                  alt="ANPC SOL"
-                  class="h-14 w-auto object-contain"
-                />
+                <img src="icons/anpc-sol.svg" 
+                alt="ANPC SOL" 
+                class="h-14 w-auto object-contain" 
+                width="250" height="56" />
               </a>
             </div>
           </div>
