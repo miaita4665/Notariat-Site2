@@ -1,0 +1,1710 @@
+<!doctype html>
+<html lang="ro" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SPN Popovici & Agachi - Societate Profesională Notarială</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="icons/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="SPN Popovici & Agachi" />
+    <link rel="manifest" href="icons/favicon/site.webmanifest" />
+    <link rel="preload" href="hero.jpg" as="image" fetchpriority="high" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Societatea Profesională Notarială Popovici & Agachi oferă servicii notariale de înaltă calitate în București, Sector 3 — autentificări, succesiuni, contracte și legalizări."
+    />
+    <meta
+      property="og:title"
+      content="Popovici & Agachi Societate Profesională Notarială"
+    />
+    <meta
+      property="og:description"
+      content="Societatea Profesională Notarială Popovici & Agachi oferă servicii notariale de înaltă calitate, combinând expertiza juridică vastă cu o abordare personalizată "
+    />
+    <meta
+      property="og:image"
+      content="https://popovicibnp.ro/social-preview.jpg"
+    />
+    <meta property="og:url" content="https://popovicibnp.ro/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              teal: { DEFAULT: "#003333", light: "#004d4d", mid: "#00403f" },
+              gold: {
+                DEFAULT: "#f0cf6f",
+                dark: "#c9a93e",
+                pale: "rgba(240,207,111,0.12)",
+              },
+              cream: { DEFAULT: "#faf8f4", mid: "#f4f1ea" },
+            },
+            fontFamily: {
+              cinzel: ['"Cinzel"', "serif"],
+              inter: ['"Inter"', "Arial", "sans-serif"],
+            },
+            letterSpacing: {
+              widest2: "0.2em",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Anything Tailwind can't express purely with utilities */
+      body {
+        font-family: "Inter", Arial, sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cinzel", serif;
+        letter-spacing: 0.04em;
+        line-height: 1.25;
+      }
+
+      /* Hero overlay + background */
+      #acasa {
+        background:
+          linear-gradient(
+            135deg,
+            rgba(0, 51, 51, 0.91) 0%,
+            rgba(0, 51, 51, 0.62) 60%
+          ),
+          url("hero.jpg") center/cover no-repeat;
+      }
+
+      /* Hero gold bottom accent */
+      #acasa::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #f0cf6f, transparent);
+      }
+
+      /* Navbar underline hover */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1.5px;
+        background: #f0cf6f;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.25s;
+      }
+      .nav-link:hover::after {
+        transform: scaleX(1);
+      }
+
+      /* FAQ accordion */
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s;
+      }
+      .faq-item.open .faq-answer {
+        max-height: 320px;
+        padding-bottom: 1.1rem;
+      }
+      .faq-item.open .faq-chevron {
+        transform: rotate(180deg);
+      }
+      .faq-chevron {
+        transition: transform 0.3s;
+      }
+
+      /* Gallery zoom */
+      .gallery-item img {
+        transition: transform 0.4s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      /* Service card top border on hover */
+      .service-card {
+        border-top: 3px solid transparent;
+        transition:
+          border-color 0.25s,
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .service-card:hover {
+        border-top-color: #f0cf6f;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 28px rgba(0, 51, 51, 0.1);
+      }
+
+      /* Testimonial card hover */
+      .testimonial-card {
+        transition:
+          box-shadow 0.25s,
+          transform 0.2s;
+      }
+      .testimonial-card:hover {
+        box-shadow: 0 6px 28px rgba(0, 51, 51, 0.1);
+        transform: translateY(-3px);
+      }
+
+      /* Notar card hover */
+      .notar-card {
+        transition:
+          border-color 0.25s,
+          box-shadow 0.25s,
+          transform 0.2s;
+      }
+      .notar-card:hover {
+        border-color: #f0cf6f;
+        box-shadow: 0 6px 28px rgba(0, 51, 51, 0.1);
+        transform: translateY(-3px);
+      }
+
+      /* Form focus ring gold */
+      .form-input:focus {
+        outline: none;
+        border-color: #f0cf6f;
+        box-shadow: 0 0 0 3px rgba(240, 207, 111, 0.18);
+      }
+
+      /* Floating call button */
+      .call-btn {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 999;
+      }
+
+      /* Scrollbar thin */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #faf8f4;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c9a93e;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-[#1a1a1a] leading-relaxed">
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 right-0 bg-teal text-white p-4 z-[1000] border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 hidden"
+    >
+      <p class="text-[0.85rem] text-white/80 max-w-4xl">
+        <span id="cookie-text"
+          >Acest site folosește cookie-uri pentru a vă oferi o experiență de
+          navigare mai bună. Prin continuarea navigării sunteți de acord cu
+          utilizarea acestora.</span
+        >
+        <a
+          href="cookies.html"
+          class="text-gold underline hover:text-gold-dark"
+          id="cookie-link"
+          >Află mai multe</a
+        >.
+      </p>
+      <button
+        onclick="acceptCookies()"
+        class="bg-gold text-teal px-6 py-2 rounded text-[0.85rem] font-bold tracking-wider uppercase hover:bg-gold-dark transition-colors whitespace-nowrap"
+        id="cookie-btn"
+      >
+        Am înțeles
+      </button>
+    </div>
+    <!-- ── TOPBAR ────────────────────────────────────────────────── -->
+    <div class="bg-teal-light py-1.5 text-[0.78rem]">
+      <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <a
+          href="https://www.google.com/maps?cid=6838984055288210912"
+          target="_blank"
+          class="text-white/80 hover:text-gold transition-colors flex items-center gap-1"
+        >
+          <i class="bi bi-geo-alt-fill text-gold"></i>
+          Str. Soldat Ghiță Șerban nr. 94, et. 1, Sector 3, București
+        </a>
+        <a
+          href="tel:+40747046863"
+          class="text-white/80 hover:text-gold transition-colors flex items-center gap-1"
+        >
+          <i class="bi bi-telephone-fill text-gold"></i>
+          0747 046 863
+        </a>
+      </div>
+    </div>
+
+    <!-- ── NAVBAR ────────────────────────────────────────────────── -->
+    <nav
+      id="navbar"
+      class="bg-teal relative z-50 border-b border-gold/10 shadow-[0_2px_16px_rgba(0,0,0,.18)]"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3"
+      >
+        <!-- Logo -->
+        <a href="#acasa">
+          <img
+            src="icons/logo_lung.svg"
+            alt="SPN Popovici & Agachi"
+            class="h-18 w-auto"
+          />
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a
+            href="#acasa"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors"
+            id="nav-1"
+            >ACASĂ</a
+          >
+          <a
+            href="#despre-noi"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors"
+            id="nav-2"
+            >DESPRE NOI</a
+          >
+          <a
+            href="#servicii"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors"
+            id="nav-3"
+            >SERVICII</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors"
+            id="nav-4"
+            >CONTACT</a
+          >
+          <button
+            onclick="toggleLang()"
+            id="langBtn"
+            class="ml-3 border border-gold/50 text-gold hover:bg-gold hover:text-teal text-[0.7rem] font-bold tracking-widest px-2.5 py-1 rounded transition-colors"
+          >
+            EN
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menuBtn"
+          onclick="toggleMenu()"
+          class="lg:hidden flex flex-col gap-1.5 p-1"
+        >
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar1"></span>
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar2"></span>
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar3"></span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden hidden bg-teal border-t border-white/10 px-4 pb-4"
+      >
+        <a
+          href="#acasa"
+          onclick="closeMenu()"
+          class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors"
+          id="mob-nav-1"
+          >ACASĂ</a
+        >
+        <a
+          href="#despre-noi"
+          onclick="closeMenu()"
+          class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors"
+          id="mob-nav-2"
+          >DESPRE NOI</a
+        >
+        <a
+          href="#servicii"
+          onclick="closeMenu()"
+          class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors"
+          id="mob-nav-3"
+          >SERVICII</a
+        >
+        <a
+          href="#contact"
+          onclick="closeMenu()"
+          class="block py-3 text-white/85 hover:text-gold text-sm font-semibold tracking-widest uppercase transition-colors"
+          id="mob-nav-4"
+          >CONTACT</a
+        >
+        <button
+          onclick="toggleLang()"
+          id="mobLangBtn"
+          class="mt-3 border border-gold/50 text-gold hover:bg-gold hover:text-teal text-xs font-bold tracking-widest px-3 py-1.5 rounded transition-colors"
+        >
+          EN
+        </button>
+      </div>
+    </nav>
+
+    <!-- ── HERO ──────────────────────────────────────────────────── -->
+    <section id="acasa" class="relative flex items-center py-24 px-4">
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="max-w-2xl">
+          <h1
+            id="site-title"
+            class="text-[clamp(1.9rem,4.5vw,3.1rem)] text-white mb-5"
+          >
+            Popovici &amp; Agachi
+          </h1>
+          <span
+            id="hero-eyebrow"
+            class="inline-block text-[0.68rem] font-semibold tracking-[0.22em] uppercase text-gold mb-5 px-3.5 py-1.5"
+          >
+            Societate Profesională Notarială
+          </span>
+          <p
+            id="short-desc"
+            class="text-white text-base leading-[1.8] mb-8 max-w-xl"
+          >
+            Oferim servicii notariale de înaltă calitate — autentificări,
+            succesiuni, contracte și legalizări — cu expertiză juridică vastă și
+            o abordare personalizată pentru fiecare client.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="#contact"
+              id="contact-button"
+              class="inline-flex items-center gap-2 bg-gold text-teal text-[0.84rem] font-semibold tracking-[.06em] uppercase px-7 py-3 rounded hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(201,169,62,.35)]"
+            >
+              Contactați-ne <i class="bi bi-arrow-right"></i>
+            </a>
+            <a
+              href="#servicii"
+              id="services-button"
+              class="inline-flex items-center gap-2 bg-transparent text-gold border border-gold text-[0.84rem] font-semibold tracking-[.06em] uppercase px-7 py-3 rounded hover:bg-gold hover:text-teal transition-all hover:-translate-y-0.5"
+            >
+              Serviciile noastre <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ── DE CE NOI ─────────────────────────────────────────────── -->
+    <section id="despre-noi" class="bg-white py-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2"
+          id="why-title"
+        >
+          De ce să ne alegeți
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11"></div>
+        <div class="grid md:grid-cols-3 gap-12">
+          <div>
+            <i
+              class="bi bi-person-check-fill text-[2.4rem] text-gold mb-4 block"
+            ></i>
+            <h3
+              class="font-cinzel text-[1.05rem] text-teal mb-2"
+              id="why-1-title"
+            >
+              Experiență profesională
+            </h3>
+            <p class="text-[0.91rem] text-[#666]" id="why-1-text">
+              Peste 10 ani de practică notarială garantează corectitudinea și
+              legalitatea tuturor documentelor încredințate.
+            </p>
+          </div>
+          <div>
+            <i
+              class="bi bi-file-earmark-text-fill text-[2.4rem] text-gold mb-4 block"
+            ></i>
+            <h3
+              class="font-cinzel text-[1.05rem] text-teal mb-2"
+              id="why-2-title"
+            >
+              Servicii complete
+            </h3>
+            <p class="text-[0.91rem] text-[#666]" id="why-2-text">
+              De la autentificarea contractelor până la testamente și procuri,
+              acoperim toate nevoile notariale.
+            </p>
+          </div>
+          <div>
+            <i
+              class="bi bi-shield-lock-fill text-[2.4rem] text-gold mb-4 block"
+            ></i>
+            <h3
+              class="font-cinzel text-[1.05rem] text-teal mb-2"
+              id="why-3-title"
+            >
+              Confidențialitate totală
+            </h3>
+            <p class="text-[0.91rem] text-[#666]" id="why-3-text">
+              Tratăm fiecare dosar cu discreție absolută și atenție maximă,
+              respectând cel mai înalt standard de etică profesională.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NOTARII ────────────────────────────────────────────────── -->
+    <section class="bg-cream py-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2 text-center"
+          id="notarii-title"
+        >
+          Notarii noștri
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11 mx-auto"></div>
+        <div class="flex flex-wrap justify-center gap-6">
+          <div
+            class="notar-card w-full sm:w-96 text-center p-10 border border-[#e8e2d4] bg-white rounded"
+          >
+            <img
+              src="icons/logo_auriu.svg"
+              alt="Notar Public"
+              class="w-13 height:auto mb-5"
+            />
+            <h3 class="font-cinzel text-[1.5rem] text-teal mb-1">
+              Popovici Alexandra
+            </h3>
+            <p
+              class="text-[0.9rem] text-[#666] tracking-[.06em] uppercase"
+              id="notar-role"
+            >
+              Notar Public
+            </p>
+          </div>
+          <div
+            class="notar-card w-full sm:w-96 text-center p-10 border border-[#e8e2d4] bg-white rounded"
+          >
+            <img
+              src="icons/logo_auriu.svg"
+              alt="Notar Public"
+              class="w-13 height:auto mb-5"
+            />
+            <h3 class="font-cinzel text-[1.5rem] text-teal mb-1">
+              Agachi-Stratulat Sergiu
+            </h3>
+            <p
+              class="text-[0.9rem] text-[#666] tracking-[.06em] uppercase"
+              id="notar-role-2"
+            >
+              Notar Public
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICII ───────────────────────────────────────────────── -->
+    <section id="servicii" class="bg-white py-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2"
+          id="servicii-title"
+        >
+          Servicii notariale
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11"></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div
+            class="service-card border border-[#e8e2d4] rounded p-8 bg-white"
+          >
+            <i class="bi bi-pen-fill text-[1.75rem] text-gold mb-4 block"></i>
+            <h3 class="font-cinzel text-base text-teal mb-2" id="svc-1-title">
+              Autentificări
+            </h3>
+            <p class="text-[0.88rem] text-[#666]" id="svc-1-text">
+              Autentificarea actelor și declarațiilor în conformitate cu
+              legislația în vigoare.
+            </p>
+          </div>
+
+          <div
+            class="service-card border border-[#e8e2d4] rounded p-8 bg-white"
+          >
+            <i
+              class="bi bi-people-fill text-[1.75rem] text-gold mb-4 block"
+            ></i>
+            <h3 class="font-cinzel text-base text-teal mb-2" id="svc-2-title">
+              Succesiuni
+            </h3>
+            <p class="text-[0.88rem] text-[#666]" id="svc-2-text">
+              Dezbateri succesorale, certificate de moștenitor și partaje
+              succesorale.
+            </p>
+          </div>
+
+          <div
+            class="service-card border border-[#e8e2d4] rounded p-8 bg-white"
+          >
+            <i class="bi bi-house-fill text-[1.75rem] text-gold mb-4 block"></i>
+            <h3 class="font-cinzel text-base text-teal mb-2" id="svc-3-title">
+              Contracte civile
+            </h3>
+            <p class="text-[0.88rem] text-[#666]" id="svc-3-text">
+              Contracte de vânzare, donație, schimb sau întreținere redactate și
+              autentificate corect.
+            </p>
+          </div>
+
+          <div
+            class="service-card border border-[#e8e2d4] rounded p-8 bg-white"
+          >
+            <i
+              class="bi bi-briefcase-fill text-[1.75rem] text-gold mb-4 block"
+            ></i>
+            <h3 class="font-cinzel text-base text-teal mb-2" id="svc-4-title">
+              Contracte comerciale
+            </h3>
+            <p class="text-[0.88rem] text-[#666]" id="svc-4-text">
+              Redactare și autentificare contracte pentru afaceri sigure și
+              conforme legal.
+            </p>
+          </div>
+
+          <div
+            class="service-card border border-[#e8e2d4] rounded p-8 bg-white"
+          >
+            <i class="bi bi-translate text-[1.75rem] text-gold mb-4 block"></i>
+            <h3 class="font-cinzel text-base text-teal mb-2" id="svc-5-title">
+              Traduceri &amp; Legalizări
+            </h3>
+            <p class="text-[0.88rem] text-[#666]" id="svc-5-text">
+              Legalizări și certificări de înscrisuri, traduceri autorizate în
+              mai multe limbi.
+            </p>
+          </div>
+
+          <div
+            class="service-card border border-[#e8e2d4] rounded p-8 bg-white"
+          >
+            <i
+              class="bi bi-chat-square-text-fill text-[1.75rem] text-gold mb-4 block"
+            ></i>
+            <h3 class="font-cinzel text-base text-teal mb-2" id="svc-6-title">
+              Consultanță notarială
+            </h3>
+            <p class="text-[0.88rem] text-[#666]" id="svc-6-text">
+              Asistență juridică specializată pentru soluții notariale clare și
+              sigure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALERIE ────────────────────────────────────────────────── -->
+    <section class="bg-cream py-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2"
+          id="galerie-title"
+        >
+          Biroul nostru
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11"></div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <!-- Înlocuiți src cu calea spre fotografiile reale -->
+          <div
+            class="gallery-item aspect-[4/3] overflow-hidden rounded border border-[#e8e2d4] bg-cream-mid relative"
+          >
+            <img
+              src="pictures/Poza1.webp"
+              alt="Poza 1"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden absolute inset-0 flex-col items-center justify-center text-[#999] text-xs gap-2"
+            >
+              <i class="bi bi-image text-3xl text-[#ddd]"></i
+              ><span>Poza 1</span>
+            </div>
+          </div>
+          <div
+            class="gallery-item aspect-[4/3] overflow-hidden rounded border border-[#e8e2d4] bg-cream-mid relative"
+          >
+            <img
+              src="pictures/Poza2.webp"
+              alt="Poza 2"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden absolute inset-0 flex-col items-center justify-center text-[#999] text-xs gap-2"
+            >
+              <i class="bi bi-image text-3xl text-[#ddd]"></i
+              ><span>Poza 2</span>
+            </div>
+          </div>
+          <div
+            class="gallery-item aspect-[4/3] overflow-hidden rounded border border-[#e8e2d4] bg-cream-mid relative"
+          >
+            <img
+              src="pictures/Poza3.webp"
+              alt="Poza 3"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden absolute inset-0 flex-col items-center justify-center text-[#999] text-xs gap-2"
+            >
+              <i class="bi bi-image text-3xl text-[#ddd]"></i
+              ><span>Poza 3</span>
+            </div>
+          </div>
+          <div
+            class="gallery-item aspect-[4/3] overflow-hidden rounded border border-[#e8e2d4] bg-cream-mid relative"
+          >
+            <img
+              src="pictures/Poza4.webp"
+              alt="Poza 4"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden absolute inset-0 flex-col items-center justify-center text-[#999] text-xs gap-2"
+            >
+              <i class="bi bi-image text-3xl text-[#ddd]"></i
+              ><span>Poza 4</span>
+            </div>
+          </div>
+          <div
+            class="gallery-item aspect-[4/3] overflow-hidden rounded border border-[#e8e2d4] bg-cream-mid relative"
+          >
+            <img
+              src="pictures/Poza5.webp"
+              alt="Poza 5"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden absolute inset-0 flex-col items-center justify-center text-[#999] text-xs gap-2"
+            >
+              <i class="bi bi-image text-3xl text-[#ddd]"></i
+              ><span>Poza 5</span>
+            </div>
+          </div>
+          <div
+            class="gallery-item aspect-[4/3] overflow-hidden rounded border border-[#e8e2d4] bg-cream-mid relative"
+          >
+            <img
+              src="pictures/Poza6.webp"
+              alt="Poza 6"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden absolute inset-0 flex-col items-center justify-center text-[#999] text-xs gap-2"
+            >
+              <i class="bi bi-image text-3xl text-[#ddd]"></i
+              ><span>Poza 6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALE ───────────────────────────────────────────── -->
+    <section class="bg-teal py-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-white mb-2 text-center"
+          id="test-title"
+        >
+          Ce spun clienții noștri
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11 mx-auto"></div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="testimonial-card bg-white border border-[#e8e2d4] rounded p-8"
+          >
+            <div class="text-gold text-sm mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
+            <span
+              class="font-cinzel text-6xl text-gold/60 leading-none block mb-2"
+              >"</span
+            >
+            <p
+              class="text-[0.91rem] italic leading-[1.75] mb-5 text-[#1a1a1a]"
+              id="test-1-text"
+            >
+              Servicii excelente, profesioniști adevărați. Succesiunea a decurs
+              fără probleme, totul a fost explicat clar și la timp.
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-gold-dark font-semibold text-sm flex-shrink-0"
+              >
+                MM
+              </div>
+              <div>
+                <strong class="text-[0.88rem] text-teal block">Maria M.</strong
+                ><span class="text-[0.78rem] text-[#666]" id="test-role-1"
+                  >Succesiune</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-card bg-white border border-[#e8e2d4] rounded p-8"
+          >
+            <div class="text-gold text-sm mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
+            <span
+              class="font-cinzel text-6xl text-gold/60 leading-none block mb-2"
+              >"</span
+            >
+            <p
+              class="text-[0.91rem] italic leading-[1.75] mb-5 text-[#1a1a1a]"
+              id="test-2-text"
+            >
+              Am autentificat un contract de vânzare-cumpărare și am primit
+              consultanță extrem de competentă. Recomand cu toată încrederea.
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-gold-dark font-semibold text-sm flex-shrink-0"
+              >
+                AI
+              </div>
+              <div>
+                <strong class="text-[0.88rem] text-teal block">Andrei I.</strong
+                ><span class="text-[0.78rem] text-[#666]" id="test-role-2"
+                  >Contract imobiliar</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-card bg-white border border-[#e8e2d4] rounded p-8"
+          >
+            <div class="text-gold text-sm mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-half"></i>
+            </div>
+            <span
+              class="font-cinzel text-6xl text-gold/60 leading-none block mb-2"
+              >"</span
+            >
+            <p
+              class="text-[0.91rem] italic leading-[1.75] mb-5 text-[#1a1a1a]"
+              id="test-3-text"
+            >
+              Birou curat, personal amabil, programare rapidă. Am realizat o
+              procură notarială în mai puțin de o oră, fără bătăi de cap.
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-gold/10 border-2 border-gold flex items-center justify-center text-gold-dark font-semibold text-sm flex-shrink-0"
+              >
+                EC
+              </div>
+              <div>
+                <strong class="text-[0.88rem] text-teal block">Elena C.</strong
+                ><span class="text-[0.78rem] text-[#666]" id="test-role-3"
+                  >Procură notarială</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────────────────────── -->
+    <section class="bg-white py-24 px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2 text-center"
+          id="faq-title"
+        >
+          Întrebări frecvente
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11 mx-auto"></div>
+
+        <div class="faq-item border-t border-[#e8e2d4]">
+          <button
+            class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors"
+            onclick="toggleFaq(this)"
+          >
+            <span
+              class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]"
+              id="faq-1-q"
+              >Ce documente sunt necesare pentru o succesiune?</span
+            >
+            <i
+              class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"
+            ></i>
+          </button>
+          <div
+            class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]"
+            id="faq-1-a"
+          >
+            Pentru dezbaterea unei succesiuni aveți nevoie de certificatul de
+            deces al defunctului, actele de identitate ale moștenitorilor,
+            actele de proprietate ale bunurilor ce fac parte din masa
+            succesorală și, după caz, testamentul. Echipa noastră vă va ghida
+            pas cu pas.
+          </div>
+        </div>
+
+        <div class="faq-item border-t border-[#e8e2d4]">
+          <button
+            class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors"
+            onclick="toggleFaq(this)"
+          >
+            <span
+              class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]"
+              id="faq-2-q"
+              >Cât durează autentificarea unui contract de
+              vânzare-cumpărare?</span
+            >
+            <i
+              class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"
+            ></i>
+          </button>
+          <div
+            class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]"
+            id="faq-2-a"
+          >
+            De regulă, autentificarea unui contract imobiliar se realizează în
+            aceeași zi, dacă documentele sunt complete. Vă recomandăm să
+            contactați biroul în prealabil pentru a pregăti dosarul și a stabili
+            o programare.
+          </div>
+        </div>
+
+        <div class="faq-item border-t border-[#e8e2d4]">
+          <button
+            class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors"
+            onclick="toggleFaq(this)"
+          >
+            <span
+              class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]"
+              id="faq-3-q"
+              >Pot obține o procură pentru un terț aflat în străinătate?</span
+            >
+            <i
+              class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"
+            ></i>
+          </button>
+          <div
+            class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]"
+            id="faq-3-a"
+          >
+            Da. Cetățenii români aflați în afara țării pot autentifica o procură
+            la consulatul/ambasada României sau la un notar local, cu aplicarea
+            apostilei Haga. Biroul nostru vă poate consilia cu privire la
+            procedura completă.
+          </div>
+        </div>
+
+        <div class="faq-item border-t border-[#e8e2d4]">
+          <button
+            class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors"
+            onclick="toggleFaq(this)"
+          >
+            <span
+              class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]"
+              id="faq-4-q"
+              >Este necesară programarea prealabilă?</span
+            >
+            <i
+              class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"
+            ></i>
+          </button>
+          <div
+            class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]"
+            id="faq-4-a"
+          >
+            Recomandăm o programare telefonică sau prin email pentru a ne
+            asigura că alocăm suficient timp dosarului dumneavoastră. Ne puteți
+            contacta la 0747 046 863 sau popovicibnp@gmail.com.
+          </div>
+        </div>
+
+        <div class="faq-item border-t border-b border-[#e8e2d4]">
+          <button
+            class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors"
+            onclick="toggleFaq(this)"
+          >
+            <span
+              class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]"
+              id="faq-5-q"
+              >Ce tarife se aplică pentru serviciile notariale?</span
+            >
+            <i
+              class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"
+            ></i>
+          </button>
+          <div
+            class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]"
+            id="faq-5-a"
+          >
+            Onorariile notariale sunt reglementate prin Ordinul Ministrului
+            Justiției și se calculează în funcție de tipul actului și valoarea
+            tranzacției. Contactați-ne pentru o estimare personalizată înainte
+            de programare.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────────────────── -->
+    <section id="contact" class="bg-cream py-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2"
+          id="contact-title"
+        >
+          Contact
+        </h2>
+        <div class="w-12 h-0.5 bg-gold mt-3 mb-11"></div>
+        <div class="grid lg:grid-cols-2 gap-14">
+          <!-- Form -->
+          <form
+            action="https://formkeep.com/f/3e80c2bc5805"
+            method="POST"
+            id="contactForm"
+            novalidate
+          >
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label
+                  for="input-name"
+                  class="block text-[0.78rem] font-semibold tracking-[.06em] uppercase text-[#666] mb-1.5"
+                  id="label-name"
+                  >Nume complet</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="input-name"
+                  autocomplete="name"
+                  placeholder="Ion Popescu"
+                  required
+                  class="form-input w-full border border-[#e8e2d4] rounded px-4 py-2.5 text-[0.9rem] bg-cream text-[#1a1a1a] transition-all"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="input-email"
+                  class="block text-[0.78rem] font-semibold tracking-[.06em] uppercase text-[#666] mb-1.5"
+                  id="label-email"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="input-email"
+                  autocomplete="email"
+                  placeholder="email@exemplu.ro"
+                  required
+                  class="form-input w-full border border-[#e8e2d4] rounded px-4 py-2.5 text-[0.9rem] bg-cream text-[#1a1a1a] transition-all"
+                />
+              </div>
+
+              <div class="mb-6 sm:col-span-2">
+                <label
+                  for="input-msg"
+                  id="label-msg"
+                  class="block text-[0.78rem] font-semibold tracking-[.06em] uppercase text-[#666] mb-1.5"
+                >
+                  Mesaj
+                </label>
+
+                <textarea
+                  name="message"
+                  id="input-msg"
+                  rows="5"
+                  placeholder="Descrieți pe scurt solicitarea..."
+                  required
+                  class="form-input w-full border border-[#e8e2d4] rounded px-4 py-2.5 text-[0.9rem] bg-cream text-[#1a1a1a] transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <div class="sm:col-span-2">
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="inline-flex items-center gap-2 bg-gold text-teal text-[0.84rem] font-semibold tracking-[.06em] uppercase px-7 py-3 rounded hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(201,169,62,.35)]"
+                >
+                  Trimite mesajul
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div> 
+
+              <div
+                id="success-msg"
+                class="hidden mt-4 p-4 bg-teal/10 text-teal border border-teal/20 rounded text-[0.9rem] font-semibold"
+              >
+                <i class="bi bi-check-circle-fill text-gold mr-2"></i>
+                <span id="success-text"
+                  >Mesajul a fost trimis cu succes! Vă vom contacta în
+                  curând.</span
+                >
+              </div>
+            </div>
+          </form>
+
+          <!-- Info + Hartă -->
+          <div>
+            <div class="flex items-start gap-3 mb-4 text-[0.92rem]">
+              <i
+                class="bi bi-geo-alt-fill text-gold text-lg mt-0.5 flex-shrink-0"
+              ></i>
+              <a
+                href="https://www.google.com/maps?cid=6838984055288210912"
+                target="_blank"
+                class="hover:text-teal-light transition-colors"
+              >
+                Str. Soldat Ghiță Șerban nr. 94, et. 1, Sector 3, București
+              </a>
+            </div>
+            <div class="flex items-start gap-3 mb-4 text-[0.92rem]">
+              <i
+                class="bi bi-envelope-fill text-gold text-lg mt-0.5 flex-shrink-0"
+              ></i>
+              <a
+                href="mailto:popovicibnp@gmail.com"
+                class="hover:text-teal-light transition-colors"
+                >popovicibnp@gmail.com</a
+              >
+            </div>
+            <div class="flex items-start gap-3 mb-4 text-[0.92rem]">
+              <i
+                class="bi bi-telephone-fill text-gold text-lg mt-0.5 flex-shrink-0"
+              ></i>
+              <a
+                href="tel:+40747046863"
+                class="hover:text-teal-light transition-colors"
+                >0747 046 863</a
+              >
+            </div>
+            <div class="flex items-start gap-3 mb-4 text-[0.92rem]">
+              <i
+                class="bi bi-clock-fill text-gold text-lg mt-0.5 flex-shrink-0"
+              ></i>
+              <span
+                ><strong id="hours-label">Luni – Vineri:</strong> 09:00 –
+                17:00</span
+              >
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11400.04967845832!2d26.178678174587237!3d44.41239086982232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1fd000be69ff3%3A0x5ee8f3c38803a5e0!2sPopovici%20%26%20Agachi%20Societate%20Profesional%C4%83%20Notarial%C4%83!5e0!3m2!1sen!2sro!4v1757653841544!5m2!1sen!2sro"
+              title="Hartă interactivă cu locația biroului notarial Popovici & Agachi"
+              class="w-full h-72 mt-5 rounded border border-[#e8e2d4]"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+    <footer class="bg-teal text-white/75 pt-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-[2fr_1fr_1.5fr] gap-12 pb-12">
+          <div>
+            <a href="#acasa" class="block">
+              <img
+                src="icons/logo_lung.svg"
+                alt="SPN Popovici & Agachi"
+                class="h-18 w-auto mb-6 object-contain"
+              />
+            </a>
+            <div class="flex flex-wrap items-center gap-2">
+              <a
+                href="https://anpc.ro/ce-este-sal/"
+                target="_blank"
+                rel="nofollow noopener"
+                class="block"
+              >
+                <img
+                  src="https://etamade-com.github.io/anpc-sal-sol-logo/anpc-sal.svg"
+                  alt="ANPC SAL"
+                  class="h-14 w-auto object-contain"
+                />
+              </a>
+              <a
+                href="https://ec.europa.eu/consumers/odr"
+                target="_blank"
+                rel="nofollow noopener"
+                class="block"
+              >
+                <img
+                  src="https://etamade-com.github.io/anpc-sal-sol-logo/anpc-sol.svg"
+                  alt="ANPC SOL"
+                  class="h-14 w-auto object-contain"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3
+              class="font-cinzel text-[0.83rem] tracking-[.13em] uppercase text-gold mb-5"
+              id="footer-menu-title"
+            >
+              Meniu
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#acasa"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-nav-1"
+                  >Acasă</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#despre-noi"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-nav-2"
+                  >Despre Noi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#servicii"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-nav-3"
+                  >Servicii</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-nav-4"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3
+              class="font-cinzel text-[0.83rem] tracking-[.13em] uppercase text-gold mb-5"
+              id="footer-info-title"
+            >
+              Informații
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="termeni.html"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-terms"
+                  >Termeni &amp; Condiții</a
+                >
+              </li>
+              <li>
+                <a
+                  href="cookies.html"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-cookies"
+                  >Politica Cookies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="confidentialitate.html"
+                  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors"
+                  id="footer-privacy"
+                  >Politica de Confidențialitate</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/08 py-5">
+          <div
+            class="flex flex-wrap justify-between items-center gap-3 text-[0.79rem]"
+          >
+            <span id="footer-copy"
+              >© 2026 Popovici &amp; Agachi — Toate drepturile rezervate</span
+            >
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="http://www.uniuneanotarilor.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >UNNPR</a
+              >
+              <a
+                href="https://www.cnpb.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >CNPB</a
+              >
+              <a
+                href="http://www.infonot.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >INFONOT</a
+              >
+              <a
+                href="http://www.ancpi.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >ANCPI</a
+              >
+              <a
+                href="https://www.aegrm.ro/"
+                target="_blank"
+                rel="nofollow"
+                class="text-white/55 hover:text-gold transition-colors"
+                >AEGRM</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating call button -->
+    <div class="fixed bottom-6 right-6 z-[999] flex flex-col gap-3">
+      <a
+        href="https://wa.me/40747046863"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-2xl shadow-[0_4px_20px_rgba(0,0,0,.22)] hover:scale-110 transition-transform"
+        aria-label="Contact pe WhatsApp"
+      >
+        <i class="bi bi-whatsapp"></i>
+      </a>
+      <a
+        href="tel:+40747046863"
+        class="w-14 h-14 rounded-full bg-gold text-teal flex items-center justify-center text-xl shadow-[0_4px_20px_rgba(0,0,0,.22)] hover:bg-gold-dark hover:scale-110 transition-transform"
+        aria-label="Sună acum"
+      >
+        <i class="bi bi-telephone-fill"></i>
+      </a>
+    </div>
+
+    <!-- ── JAVASCRIPT ─────────────────────────────────────────────── -->
+    <script>
+      /* ── MOBILE MENU ───────────────────────────────────────────── */
+      function toggleMenu() {
+        const m = document.getElementById("mobileMenu");
+        m.classList.toggle("hidden");
+      }
+      function closeMenu() {
+        document.getElementById("mobileMenu").classList.add("hidden");
+      }
+
+      const T = {
+        ro: {
+          langBtn: "EN",
+          "cookie-text":
+            "Acest site folosește cookie-uri pentru a vă oferi o experiență de navigare mai bună. Prin continuarea navigării sunteți de acord cu utilizarea acestora.",
+          "cookie-link": "Află mai multe",
+          "cookie-btn": "Am înțeles",
+          "ph-name": "Ion Popescu",
+          "ph-email": "email@exemplu.ro",
+          "ph-msg": "Descrieți pe scurt solicitarea...",
+          "success-text":
+            "Mesajul a fost trimis cu succes! Vă vom contacta în curând.",
+          "nav-1": "ACASĂ",
+          "nav-2": "DESPRE NOI",
+          "nav-3": "SERVICII",
+          "nav-4": "CONTACT",
+          "mob-nav-1": "ACASĂ",
+          "mob-nav-2": "DESPRE NOI",
+          "mob-nav-3": "SERVICII",
+          "mob-nav-4": "CONTACT",
+          "hero-eyebrow": "Societate Profesională Notarială",
+          "site-title": "Popovici & Agachi",
+          "short-desc":
+            "Oferim servicii notariale de înaltă calitate — autentificări, succesiuni, contracte și legalizări — cu expertiză juridică vastă și o abordare personalizată pentru fiecare client.",
+          "contact-button": "Contactați-ne",
+          "services-button": "Serviciile noastre",
+          "sched-label": "Luni – Vineri",
+          "why-title": "De ce să ne alegeți",
+          "why-1-title": "Experiență profesională",
+          "why-1-text":
+            "Peste 10 ani de practică notarială garantează corectitudinea și legalitatea tuturor documentelor încredințate.",
+          "why-2-title": "Servicii complete",
+          "why-2-text":
+            "De la autentificarea contractelor până la testamente și procuri, acoperim toate nevoile notariale.",
+          "why-3-title": "Confidențialitate totală",
+          "why-3-text":
+            "Tratăm fiecare dosar cu discreție absolută și atenție maximă, respectând cel mai înalt standard de etică profesională.",
+          "notarii-title": "Notarii noștri",
+          "notar-role": "Notar Public",
+          "notar-role-2": "Notar Public",
+          "servicii-title": "Servicii notariale",
+          "svc-1-title": "Autentificări",
+          "svc-1-text":
+            "Autentificarea actelor și declarațiilor în conformitate cu legislația în vigoare.",
+          "svc-2-title": "Succesiuni",
+          "svc-2-text":
+            "Dezbateri succesorale, certificate de moștenitor și partaje succesorale.",
+          "svc-3-title": "Contracte civile",
+          "svc-3-text":
+            "Contracte de vânzare, donație, schimb sau întreținere redactate și autentificate corect.",
+          "svc-4-title": "Contracte comerciale",
+          "svc-4-text":
+            "Redactare și autentificare contracte pentru afaceri sigure și conforme legal.",
+          "svc-5-title": "Traduceri & Legalizări",
+          "svc-5-text":
+            "Legalizări și certificări de înscrisuri, traduceri autorizate în mai multe limbi.",
+          "svc-6-title": "Consultanță notarială",
+          "svc-6-text":
+            "Asistență juridică specializată pentru soluții notariale clare și sigure.",
+          "galerie-title": "Biroul nostru",
+          "test-title": "Ce spun clienții noștri",
+          "test-1-text":
+            "Servicii excelente, profesioniști adevărați. Succesiunea a decurs fără probleme, totul a fost explicat clar și la timp.",
+          "test-2-text":
+            "Am autentificat un contract de vânzare-cumpărare și am primit consultanță extrem de competentă. Recomand cu toată încrederea.",
+          "test-3-text":
+            "Birou curat, personal amabil, programare rapidă. Am realizat o procură notarială în mai puțin de o oră, fără bătăi de cap.",
+          "test-role-1": "Succesiune",
+          "test-role-2": "Contract imobiliar",
+          "test-role-3": "Procură notarială",
+          "faq-title": "Întrebări frecvente",
+          "faq-1-q": "Ce documente sunt necesare pentru o succesiune?",
+          "faq-1-a":
+            "Pentru dezbaterea unei succesiuni aveți nevoie de certificatul de deces al defunctului, actele de identitate ale moștenitorilor, actele de proprietate ale bunurilor ce fac parte din masa succesorală și, după caz, testamentul. Echipa noastră vă va ghida pas cu pas.",
+          "faq-2-q":
+            "Cât durează autentificarea unui contract de vânzare-cumpărare?",
+          "faq-2-a":
+            "De regulă, autentificarea unui contract imobiliar se realizează în aceeași zi, dacă documentele sunt complete. Vă recomandăm să contactați biroul în prealabil pentru a pregăti dosarul și a stabili o programare.",
+          "faq-3-q":
+            "Pot obține o procură pentru un terț aflat în străinătate?",
+          "faq-3-a":
+            "Da. Cetățenii români aflați în afara țării pot autentifica o procură la consulatul/ambasada României sau la un notar local, cu aplicarea apostilei Haga. Biroul nostru vă poate consilia cu privire la procedura completă.",
+          "faq-4-q": "Este necesară programarea prealabilă?",
+          "faq-4-a":
+            "Recomandăm o programare telefonică sau prin email pentru a ne asigura că alocăm suficient timp dosarului dumneavoastră. Ne puteți contacta la 0747 046 863 sau popovicibnp@gmail.com.",
+          "faq-5-q": "Ce tarife se aplică pentru serviciile notariale?",
+          "faq-5-a":
+            "Onorariile notariale sunt reglementate prin Ordinul Ministrului Justiției și se calculează în funcție de tipul actului și valoarea tranzacției. Contactați-ne pentru o estimare personalizată.",
+          "contact-title": "Contact",
+          "label-name": "Nume complet",
+          "label-email": "Email",
+          "label-msg": "Mesaj",
+          "ph-name": "Ion Popescu",
+          "ph-email": "email@exemplu.ro",
+          "ph-msg": "Descrieți pe scurt solicitarea...",
+          "success-text":
+            "Mesajul a fost trimis cu succes! Vă vom contacta în curând.",
+          "submit-btn": "Trimite mesajul",
+          "hours-label": "Luni – Vineri:",
+          "footer-menu-title": "Meniu",
+          "footer-info-title": "Informații",
+          "footer-nav-1": "Acasă",
+          "footer-nav-2": "Despre Noi",
+          "footer-nav-3": "Servicii",
+          "footer-nav-4": "Contact",
+          "footer-terms": "Termeni & Condiții",
+          "footer-cookies": "Politica Cookies",
+          "footer-privacy": "Politica de Confidențialitate",
+          "footer-copy":
+            "© 2026 Popovici & Agachi Societate Profesională Notarială — Toate drepturile rezervate",
+        },
+        en: {
+          langBtn: "RO",
+          "cookie-text":
+            "Acest site folosește cookie-uri pentru a vă oferi o experiență de navigare mai bună. Prin continuarea navigării sunteți de acord cu utilizarea acestora.",
+          "cookie-link": "Află mai multe",
+          "cookie-btn": "Am înțeles",
+          "ph-name": "Ion Popescu",
+          "ph-email": "email@exemplu.ro",
+          "ph-msg": "Descrieți pe scurt solicitarea...",
+          "success-text":
+            "Mesajul a fost trimis cu succes! Vă vom contacta în curând.",
+          "nav-1": "HOME",
+          "nav-2": "ABOUT US",
+          "nav-3": "SERVICES",
+          "nav-4": "CONTACT",
+          "mob-nav-1": "HOME",
+          "mob-nav-2": "ABOUT US",
+          "mob-nav-3": "SERVICES",
+          "mob-nav-4": "CONTACT",
+          "hero-eyebrow": "Professional Notarial Society",
+          "site-title": "Popovici & Agachi",
+          "short-desc":
+            "We offer high-quality notarial services — authentications, successions, contracts, and legalizations — combining extensive legal expertise with a personalised approach for every client.",
+          "contact-button": "Contact Us",
+          "services-button": "Our Services",
+          "sched-label": "Monday – Friday",
+          "why-title": "Why Choose Us",
+          "why-1-title": "Professional Experience",
+          "why-1-text":
+            "Over 10 years of notarial practice guarantee the accuracy and legality of every document entrusted to us.",
+          "why-2-title": "Comprehensive Services",
+          "why-2-text":
+            "From authenticating contracts to wills and powers of attorney, we cover all notarial needs.",
+          "why-3-title": "Complete Confidentiality",
+          "why-3-text":
+            "We treat every file with absolute discretion and maximum care, upholding the highest standard of professional ethics.",
+          "notarii-title": "Our Notaries",
+          "notar-role": "Public Notary",
+          "notar-role-2": "Public Notary",
+          "servicii-title": "Notarial Services",
+          "svc-1-title": "Authentications",
+          "svc-1-text":
+            "Authentication of deeds and declarations in accordance with current legislation.",
+          "svc-2-title": "Successions",
+          "svc-2-text":
+            "Estate proceedings, certificates of inheritance, and succession partitions.",
+          "svc-3-title": "Civil Contracts",
+          "svc-3-text":
+            "Sale, donation, exchange, or maintenance contracts properly drafted and authenticated.",
+          "svc-4-title": "Commercial Contracts",
+          "svc-4-text":
+            "Drafting and authentication of contracts for secure, legally compliant business transactions.",
+          "svc-5-title": "Translations & Legalizations",
+          "svc-5-text":
+            "Legalizations and certifications of documents, authorized translations in multiple languages.",
+          "svc-6-title": "Notarial Consultancy",
+          "svc-6-text":
+            "Specialized legal assistance for clear and secure notarial solutions.",
+          "galerie-title": "Our Office",
+          "test-title": "What Our Clients Say",
+          "test-1-text":
+            "Excellent services, true professionals. The succession went smoothly — everything was explained clearly and delivered on time.",
+          "test-2-text":
+            "I had a sale-purchase contract authenticated and received extremely competent advice. I recommend them wholeheartedly.",
+          "test-3-text":
+            "Clean office, friendly staff, quick appointment. I had a power of attorney done in under an hour, hassle-free.",
+          "test-role-1": "Succession",
+          "test-role-2": "Property Contract",
+          "test-role-3": "Power of Attorney",
+          "faq-title": "Frequently Asked Questions",
+          "faq-1-q": "What documents are needed for a succession?",
+          "faq-1-a":
+            "For estate proceedings you will need the deceased's death certificate, heirs' identity documents, property title deeds included in the estate, and the will if applicable. Our team will guide you step by step.",
+          "faq-2-q":
+            "How long does authenticating a sale-purchase contract take?",
+          "faq-2-a":
+            "Typically, authenticating a property contract is completed on the same day if all documents are in order. We recommend contacting the office beforehand to prepare the file and schedule an appointment.",
+          "faq-3-q": "Can I obtain a power of attorney for someone abroad?",
+          "faq-3-a":
+            "Yes. Romanian citizens abroad can authenticate a power of attorney at the Romanian consulate/embassy or a local notary, with the Hague Apostille. Our office can advise you on the complete procedure.",
+          "faq-4-q": "Is an appointment required?",
+          "faq-4-a":
+            "We recommend booking by phone or email to ensure we allocate enough time to your file. You can reach us at 0747 046 863 or popovicibnp@gmail.com.",
+          "faq-5-q": "What fees apply to notarial services?",
+          "faq-5-a":
+            "Notarial fees are regulated by the Order of the Minister of Justice and calculated based on the deed type and transaction value. Contact us for a personalised estimate.",
+          "contact-title": "Contact",
+          "label-name": "Full Name",
+          "label-email": "Email",
+          "label-msg": "Message",
+          "ph-name": "John Doe",
+          "ph-email": "email@example.com",
+          "ph-msg": "Briefly describe your request...",
+          "success-text":
+            "Message sent successfully! We will contact you soon.",
+          "submit-btn": "Send Message",
+          "hours-label": "Monday – Friday:",
+          "footer-menu-title": "Menu",
+          "footer-info-title": "Information",
+          "footer-nav-1": "Home",
+          "footer-nav-2": "About Us",
+          "footer-nav-3": "Services",
+          "footer-nav-4": "Contact",
+          "footer-terms": "Terms & Conditions",
+          "footer-cookies": "Cookie Policy",
+          "footer-privacy": "Privacy Policy",
+          "footer-copy": "© 2026 Popovici & Agachi — All rights reserved",
+        },
+      };
+
+      let lang = localStorage.getItem("lang") || "ro";
+
+      function applyLang() {
+        const d = T[lang];
+        Object.keys(d).forEach((id) => {
+          if (id === "langBtn") {
+            ["langBtn", "mobLangBtn"].forEach((bid) => {
+              const b = document.getElementById(bid);
+              if (b) b.textContent = d[id];
+            });
+            return;
+          }
+          const el = document.getElementById(id);
+          if (el) {
+            // Verificăm dacă e un placeholder
+            if (id.startsWith("ph-")) {
+              const inputId = id.replace("ph-", "input-");
+              const inputEl = document.getElementById(inputId);
+              if (inputEl) inputEl.placeholder = d[id];
+            } else {
+              el.textContent = d[id];
+            }
+          }
+        });
+        document.documentElement.lang = lang;
+        localStorage.setItem("lang", lang);
+      }
+
+      function toggleLang() {
+        lang = lang === "ro" ? "en" : "ro";
+        applyLang();
+      }
+
+      applyLang();
+
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item.open")
+          .forEach((i) => i.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      }
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Oprește încărcarea paginii noi Formkeep
+
+          const form = this;
+          const inputs = form.querySelectorAll("[required]");
+          const btn = document.getElementById("submit-btn");
+          const successDiv = document.getElementById("success-msg");
+          let valid = true;
+
+          inputs.forEach((inp) => {
+            if (
+              !inp.value.trim() ||
+              (inp.type === "email" && !inp.value.includes("@"))
+            ) {
+              inp.classList.add("border-red-400");
+              valid = false;
+            } else {
+              inp.classList.remove("border-red-400");
+            }
+          });
+
+          if (valid) {
+            const originalBtnHTML = btn.innerHTML;
+            btn.innerHTML =
+              '<i class="bi bi-hourglass-split"></i> Se trimite...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: { Accept: "application/json" },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  form.reset();
+                  successDiv.classList.remove("hidden");
+                  btn.innerHTML = originalBtnHTML;
+                  btn.disabled = false;
+                  setTimeout(() => successDiv.classList.add("hidden"), 5000);
+                } else {
+                  alert(
+                    lang === "ro"
+                      ? "A apărut o eroare. Vă rugăm să încercați din nou."
+                      : "An error occurred. Please try again.",
+                  );
+                  btn.innerHTML = originalBtnHTML;
+                  btn.disabled = false;
+                }
+              })
+              .catch((error) => {
+                alert(lang === "ro" ? "Eroare de rețea." : "Network error.");
+                btn.innerHTML = originalBtnHTML;
+                btn.disabled = false;
+              });
+          }
+        });
+      //Cookies
+      if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").classList.remove("hidden");
+      }
+      function acceptCookies() {
+        localStorage.setItem("cookiesAccepted", "true");
+        document.getElementById("cookie-banner").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
