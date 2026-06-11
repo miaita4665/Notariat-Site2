@@ -215,34 +215,34 @@
       </a>
     </div>
     <div id="footer-placeholder"></div>
-    <script src="/global.js"></script>
+    <script src="./global.js"></script>
     <script>
-      window.applyLocalTranslations = function(currentLang) {
-        
+      window.applyLocalTranslations = function (currentLang) {
         // --- TRADUCERILE ÎN ROMÂNĂ ---
         if (currentLang === "ro") {
-          
           // Exemplu: Traduci titlul paginii
           const pageTitle = document.getElementById("page-title");
-          if (pageTitle) pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
-          
+          if (pageTitle)
+            pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
+
           // Exemplu: Traduci un paragraf
           const pageDesc = document.getElementById("page-desc");
-          if (pageDesc) pageDesc.textContent = "Descrierea serviciului în română.";
-        } 
-        
+          if (pageDesc)
+            pageDesc.textContent = "Descrierea serviciului în română.";
+        }
+
         // --- TRADUCERILE ÎN ENGLEZĂ ---
         else if (currentLang === "en") {
-          
           // Exemplu: Traduci titlul paginii
           const pageTitle = document.getElementById("page-title");
-          if (pageTitle) pageTitle.textContent = "English Title for Secondary Page";
-          
+          if (pageTitle)
+            pageTitle.textContent = "English Title for Secondary Page";
+
           // Exemplu: Traduci un paragraf
           const pageDesc = document.getElementById("page-desc");
-          if (pageDesc) pageDesc.textContent = "Service description in English.";
+          if (pageDesc)
+            pageDesc.textContent = "Service description in English.";
         }
-        
       };
     </script>
   </body>

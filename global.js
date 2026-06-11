@@ -11,8 +11,8 @@ async function loadComponent(url, placeholderId) {
 }
 
 Promise.all([
-  loadComponent("/navbar.html", "navbar-placeholder"),
-  loadComponent("/footer.html",  "footer-placeholder"),
+  loadComponent("navbar.html", "navbar-placeholder"),
+  loadComponent("footer.html",  "footer-placeholder"),
 ]).then(() => {
   initNav();
   initLang();
