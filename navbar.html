@@ -26,7 +26,19 @@
 
     <div class="hidden lg:flex items-center gap-1">
       <a href="index.html" id="nav-1" class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">ACASĂ</a>
-      <a href="index.html#despre-noi" id="nav-2" class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">DESPRE NOI</a>
+      
+      <div class="relative group">
+        <button class="text-white/80 group-hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors inline-flex items-center gap-1">
+          <span id="nav-bloguri">BLOG NOTARIAL</span> <i class="bi bi-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+        </button>
+        <div class="absolute left-0 top-full hidden group-hover:block bg-teal border border-gold/20 rounded shadow-xl min-w-[220px] py-1">
+          <a href="template-pagina.html" id="nav-blog-1" class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Blog 1</a>
+          <a href="template-pagina.html" id="nav-blog-2" class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Blog 2</a>
+          <a href="template-pagina.html" id="nav-blog-3" class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Blog 3</a>
+          <a href="template-pagina.html" id="nav-blog-4" class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Blog 4</a>
+        </div>
+      </div>
+      
       <a href="index.html#servicii" id="nav-3" class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">SERVICII</a>
 
       <div class="relative group">
@@ -59,10 +71,19 @@
     <a href="index.html#servicii" id="mob-nav-3" onclick="closeMenu()" class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors">SERVICII</a>
 
     <div class="border-b border-white/06 py-1 bg-teal-mid/30 px-2 rounded my-1">
-      <a href="acte-necesare.html" id="mob-dd-1" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Acte Necesare</a>
-      <a href="tarife.html" id="mob-dd-2" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Tarife & Onorarii</a>
-      <a href="tipuri-acte.html" id="mob-dd-3" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Ghid Tipuri Acte</a>
-      <a href="servicii-conexe.html" id="mob-dd-4" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Traduceri & Apostile</a>
+      <span class="block py-2 text-white/85 text-sm font-semibold tracking-widest uppercase">Blog Notarial</span>
+      <a href="template-pagina.html" id="mob-blog-1" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Blog 1</a>
+      <a href="template-pagina.html" id="mob-blog-2" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Blog 2</a>
+      <a href="template-pagina.html" id="mob-blog-3" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Blog 3</a>
+      <a href="template-pagina.html" id="mob-blog-4" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Blog 4</a>
+    </div>
+
+    <div class="border-b border-white/06 py-1 bg-teal-mid/30 px-2 rounded my-1">
+      <span class="block py-2 text-white/85 text-sm font-semibold tracking-widest uppercase">Ghiduri Utile</span>
+      <a href="acte-necesare.html" id="mob-dd-1" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Acte Necesare</a>
+      <a href="tarife.html" id="mob-dd-2" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Tarife & Onorarii</a>
+      <a href="tipuri-acte.html" id="mob-dd-3" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Ghid Tipuri Acte</a>
+      <a href="servicii-conexe.html" id="mob-dd-4" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider pl-2">─ Traduceri & Apostile</a>
     </div>
 
     <a href="index.html#contact" id="mob-nav-4" onclick="closeMenu()" class="block py-3 text-white/85 hover:text-gold text-sm font-semibold tracking-widest uppercase transition-colors">CONTACT</a>
