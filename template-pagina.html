@@ -4,15 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- ══ EDITEAZĂ PENTRU FIECARE PAGINĂ ══════════════════════════ -->
     <title>Titlul Paginii — SPN Popovici &amp; Agachi</title>
     <meta name="description" content="Descriere SEO specifică acestei pagini, 150-160 caractere." />
     <meta property="og:title"       content="Titlul Paginii — Popovici &amp; Agachi" />
     <meta property="og:description" content="Descriere Open Graph pentru partajare pe rețele sociale." />
     <meta property="og:image"       content="https://popovicibnp.ro/social-preview.jpg" />
     <meta property="og:url"         content="https://popovicibnp.ro/PAGINA.html" />
-    <!-- ══════════════════════════════════════════════════════════════ -->
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="apple-mobile-web-app-title" content="SPN Popovici &amp; Agachi" />
     <meta name="theme-color" content="#ffffff" />
@@ -41,6 +38,9 @@
               cinzel: ['"Cinzel"', "serif"],
               inter:  ['"Inter"', "Arial", "sans-serif"],
             },
+            letterSpacing: {
+              widest2: "0.2em",
+            },
           },
         },
       };
@@ -67,7 +67,7 @@
       /* ── Page hero banner ── */
       .page-hero {
         background:
-          linear-gradient(135deg, rgba(0,51,51,0.93) 0%, rgba(0,51,51,0.70) 60%),
+          linear-gradient(135deg, rgba(0,51,51,0.91) 0%, rgba(0,51,51,0.62) 60%),
           url("hero.webp") center/cover no-repeat;
         position: relative;
       }
@@ -75,6 +75,23 @@
         content: ""; position: absolute; bottom: 0; left: 0; right: 0;
         height: 3px;
         background: linear-gradient(90deg, transparent, #f0cf6f, transparent);
+      }
+
+      /* ── FAQ accordion (exact ca în index) ── */
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.3s;
+      }
+      .faq-item.open .faq-answer {
+        max-height: 320px;
+        padding-bottom: 1.1rem;
+      }
+      .faq-item.open .faq-chevron {
+        transform: rotate(180deg);
+      }
+      .faq-chevron {
+        transition: transform 0.3s;
       }
 
       /* ── Scrollbar ── */
@@ -89,39 +106,28 @@
 
   <body class="bg-white text-[#1a1a1a] leading-relaxed">
 
-    <!-- ══ NAVBAR — injectat automat din navbar.html ════════════════ -->
     <div id="navbar-placeholder"></div>
 
-    <!-- ══ PAGE HERO ════════════════════════════════════════════════
-         Editează: titlul paginii + textul breadcrumb-ului (ultimul <li>)
-    ══════════════════════════════════════════════════════════════════ -->
     <section class="page-hero py-16 px-4">
       <div class="max-w-7xl mx-auto">
         <nav aria-label="breadcrumb" class="mb-4">
           <ol class="flex items-center gap-2 text-[0.78rem] text-white/60 font-medium tracking-wide">
             <li><a href="index.html" class="hover:text-gold transition-colors">Acasă</a></li>
             <li><i class="bi bi-chevron-right text-gold/50 text-[0.65rem]"></i></li>
-            <!-- ══ EDITEAZĂ ══ -->
             <li class="text-gold">Titlul Paginii</li>
           </ol>
         </nav>
-        <!-- ══ EDITEAZĂ ══ -->
-        <h1 class="text-[clamp(1.7rem,3.5vw,2.6rem)] text-white mb-3">
+        <h1 class="text-[clamp(1.7rem,3.5vw,2.6rem)] text-white mb-3" id="page-hero-title">
           Titlul Paginii
         </h1>
-        <p class="text-white/70 text-[0.95rem] max-w-xl leading-relaxed">
+        <p class="text-white/70 text-[0.95rem] max-w-xl leading-relaxed" id="page-hero-desc">
           Subtitlu opțional — o propoziție scurtă care descrie conținutul paginii.
         </p>
       </div>
     </section>
 
-    <!-- ══ CONȚINUT PRINCIPAL ════════════════════════════════════════
-         Mai jos sunt 3 exemple de layout reutilizabile.
-         Șterge ce nu folosești și adaugă conținutul real.
-    ══════════════════════════════════════════════════════════════════ -->
     <main>
 
-      <!-- ── Secțiune text simplu ──────────────────────────────────── -->
       <section class="bg-white py-20 px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
@@ -130,7 +136,7 @@
           <div class="w-12 h-0.5 bg-gold mt-3 mb-10"></div>
 
           <p class="text-[0.93rem] text-[#555] leading-[1.85] mb-5">
-            Conținut text al secțiunii. Înlocuiește cu informațiile specifice paginii.
+            Conținut text al secțiunii. Înlocuiește cu informațiile specifice paginii. Structura este curată și ușor de citit.
           </p>
 
           <div class="flex items-start gap-4 mt-8 p-6 bg-cream rounded border border-[#e8e2d4]">
@@ -145,84 +151,158 @@
         </div>
       </section>
 
-      <!-- ── Grid de carduri ───────────────────────────────────────── -->
-      <section class="bg-cream py-20 px-4">
+      <section class="bg-cream py-20 px-4 border-y border-[#e8e2d4]/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div class="w-full md:w-1/2">
+            <div class="aspect-[4/3] bg-white rounded shadow-sm border border-[#e8e2d4] flex flex-col items-center justify-center relative overflow-hidden group">
+              <i class="bi bi-image text-[4rem] text-gold/40 group-hover:scale-110 transition-transform duration-500"></i>
+              <span class="absolute bottom-4 left-4 bg-teal/90 text-white px-3 py-1 text-[0.75rem] font-medium rounded tracking-wide">Placeholder Imagine</span>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
+              Prezentare Detaliată
+            </h2>
+            <div class="w-12 h-0.5 bg-gold mt-3 mb-6"></div>
+            <p class="text-[0.93rem] text-[#555] leading-[1.85] mb-6">
+              Acest bloc este perfect pentru a evidenția un detaliu specific, a descrie un anumit serviciu sau pentru o prezentare scurtă. 
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-[0.9rem] text-[#444]">
+                <i class="bi bi-check-circle-fill text-gold mt-1 text-[0.9rem]"></i> 
+                <span><strong>Avantaj 1:</strong> Explicație clară a beneficiului.</span>
+              </li>
+              <li class="flex items-start gap-3 text-[0.9rem] text-[#444]">
+                <i class="bi bi-check-circle-fill text-gold mt-1 text-[0.9rem]"></i> 
+                <span><strong>Avantaj 2:</strong> Soluție rapidă și sigură.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
           <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
-            Titlul Secțiunii Grid
+            Caracteristici / Servicii derivate
           </h2>
           <div class="w-12 h-0.5 bg-gold mt-3 mb-10"></div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div class="bg-white border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
-                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.10)]
+            <div class="bg-cream border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
+                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.06)]
                         transition-all duration-200">
               <i class="bi bi-file-earmark-text-fill text-[1.6rem] text-gold mb-4 block"></i>
-              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card</h3>
-              <p class="text-[0.87rem] text-[#666] leading-[1.75]">Descriere scurtă a elementului.</p>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card 1</h3>
+              <p class="text-[0.87rem] text-[#666] leading-[1.75]">Descriere scurtă a elementului sau a particularităților.</p>
             </div>
-            <div class="bg-white border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
-                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.10)]
+            <div class="bg-cream border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
+                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.06)]
                         transition-all duration-200">
               <i class="bi bi-pen-fill text-[1.6rem] text-gold mb-4 block"></i>
-              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card</h3>
-              <p class="text-[0.87rem] text-[#666] leading-[1.75]">Descriere scurtă a elementului.</p>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card 2</h3>
+              <p class="text-[0.87rem] text-[#666] leading-[1.75]">Descriere scurtă a elementului sau a particularităților.</p>
             </div>
-            <div class="bg-white border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
-                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.10)]
+            <div class="bg-cream border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
+                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.06)]
                         transition-all duration-200">
               <i class="bi bi-shield-lock-fill text-[1.6rem] text-gold mb-4 block"></i>
-              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card</h3>
-              <p class="text-[0.87rem] text-[#666] leading-[1.75]">Descriere scurtă a elementului.</p>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card 3</h3>
+              <p class="text-[0.87rem] text-[#666] leading-[1.75]">Descriere scurtă a elementului sau a particularităților.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ── Listă numerotată (acte / pași) ───────────────────────── -->
-      <section class="bg-white py-20 px-4">
+      <section class="bg-cream py-20 px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
-            Acte necesare / Pași
+            Acte necesare / Pași de urmat
           </h2>
           <div class="w-12 h-0.5 bg-gold mt-3 mb-10"></div>
 
-          <ol class="space-y-0">
-            <li class="flex items-start gap-5 py-5 border-b border-[#e8e2d4]">
+          <ol class="space-y-0 bg-white p-8 border border-[#e8e2d4] rounded">
+            <li class="flex items-start gap-5 py-5 border-b border-[#e8e2d4] first:pt-0">
               <span class="font-cinzel text-[1.1rem] text-gold min-w-[2rem] mt-0.5">01</span>
               <div>
-                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului</h3>
+                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului 1</h3>
                 <p class="text-[0.87rem] text-[#666] leading-[1.75]">Detalii — original sau copie, emis de cine etc.</p>
               </div>
             </li>
             <li class="flex items-start gap-5 py-5 border-b border-[#e8e2d4]">
               <span class="font-cinzel text-[1.1rem] text-gold min-w-[2rem] mt-0.5">02</span>
               <div>
-                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului</h3>
-                <p class="text-[0.87rem] text-[#666] leading-[1.75]">Detalii despre document.</p>
+                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului 2</h3>
+                <p class="text-[0.87rem] text-[#666] leading-[1.75]">Detalii despre necesitatea acestui act.</p>
               </div>
             </li>
-            <li class="flex items-start gap-5 py-5">
+            <li class="flex items-start gap-5 py-5 last:pb-0">
               <span class="font-cinzel text-[1.1rem] text-gold min-w-[2rem] mt-0.5">03</span>
               <div>
-                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului</h3>
-                <p class="text-[0.87rem] text-[#666] leading-[1.75]">Detalii despre document.</p>
+                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului 3</h3>
+                <p class="text-[0.87rem] text-[#666] leading-[1.75]">Orice alte informații specifice procedurii.</p>
               </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <!-- ── CTA banner ────────────────────────────────────────────── -->
+      <section class="bg-white py-24 px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="font-cinzel text-[clamp(1.45rem,3vw,2rem)] text-teal mb-2 text-center" id="faq-title">
+            Întrebări frecvente
+          </h2>
+          <div class="w-12 h-0.5 bg-gold mt-3 mb-11 mx-auto"></div>
+
+          <div class="faq-item border-t border-[#e8e2d4]">
+            <button class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors" onclick="toggleFaq(this)">
+              <span class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]" id="faq-t-1-q">
+                Întrebarea numărul unu specifică paginii?
+              </span>
+              <i class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"></i>
+            </button>
+            <div class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]" id="faq-t-1-a">
+              Răspunsul detaliat și clar vine aici. Această structură păstrează animația de tip acordeon din pagina ta principală.
+            </div>
+          </div>
+
+          <div class="faq-item border-t border-[#e8e2d4]">
+            <button class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors" onclick="toggleFaq(this)">
+              <span class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]" id="faq-t-2-q">
+                Întrebarea numărul doi?
+              </span>
+              <i class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"></i>
+            </button>
+            <div class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]" id="faq-t-2-a">
+              Alt răspuns util care clarifică procedurile pentru clienții biroului notarial.
+            </div>
+          </div>
+
+          <div class="faq-item border-t border-b border-[#e8e2d4]">
+            <button class="faq-question w-full flex justify-between items-center py-5 text-left gap-4 hover:text-gold-dark transition-colors" onclick="toggleFaq(this)">
+              <span class="font-cinzel text-[0.95rem] text-teal tracking-[.03em]" id="faq-t-3-q">
+                Care sunt costurile procedurii?
+              </span>
+              <i class="bi bi-chevron-down faq-chevron text-gold flex-shrink-0"></i>
+            </button>
+            <div class="faq-answer text-[0.91rem] text-[#666] leading-[1.75]" id="faq-t-3-a">
+              Onorariile notariale sunt reglementate prin Ordinul Ministrului Justiției. Pentru o estimare exactă aferentă acestui serviciu, vă rugăm să ne contactați.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <section class="bg-teal py-16 px-4">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="font-cinzel text-[clamp(1.2rem,2.5vw,1.7rem)] text-white mb-4">Aveți întrebări?</h2>
-          <p class="text-white/70 text-[0.93rem] mb-8 leading-relaxed">
-            Echipa noastră este la dispoziția dumneavoastră pentru orice detaliu suplimentar.
+          <h2 class="font-cinzel text-[clamp(1.2rem,2.5vw,1.7rem)] text-white mb-4" id="cta-title">Aveți întrebări?</h2>
+          <p class="text-white/70 text-[0.93rem] mb-8 leading-relaxed" id="cta-desc">
+            Echipa noastră este la dispoziția dumneavoastră pentru orice detaliu suplimentar sau programare.
           </p>
           <a href="index.html#contact"
             class="inline-flex items-center gap-2 bg-gold text-teal text-[0.84rem] font-semibold tracking-[.06em] uppercase px-8 py-3 rounded
-                   hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(201,169,62,.35)]">
+                   hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(201,169,62,.35)]"
+            id="cta-btn">
             Contactați-ne <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -230,34 +310,36 @@
 
     </main>
 
-    <!-- ══ FOOTER — injectat automat din footer.html ════════════════ -->
     <div id="footer-placeholder"></div>
-<script src="/global.js"></script>
+    <script src="/global.js"></script>
+
     <script>
+      window.toggleFaq = function(btn) {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        
+        // Închide toate celelalte
+        document.querySelectorAll(".faq-item.open").forEach((i) => i.classList.remove("open"));
+        
+        // Deschide pe cel apăsat dacă era închis
+        if (!isOpen) item.classList.add("open");
+      };
+
+      // ── TRADUCERI SPECIFICE ACESTEI PAGINI ──
       window.applyLocalTranslations = function(currentLang) {
         
-        // --- TRADUCERILE ÎN ROMÂNĂ ---
         if (currentLang === "ro") {
-          
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle) pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
-          
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc) pageDesc.textContent = "Descrierea serviciului în română.";
+          const el1 = document.getElementById("page-hero-title"); if (el1) el1.textContent = "Titlul Paginii";
+          const el2 = document.getElementById("faq-title"); if (el2) el2.textContent = "Întrebări frecvente";
+          // etc... adaugă ID-urile și textele în română
         } 
-        
-        // --- TRADUCERILE ÎN ENGLEZĂ ---
         else if (currentLang === "en") {
-          
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle) pageTitle.textContent = "English Title for Secondary Page";
-          
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc) pageDesc.textContent = "Service description in English.";
+          const el1 = document.getElementById("page-hero-title"); if (el1) el1.textContent = "Page Title";
+          const el2 = document.getElementById("faq-title"); if (el2) el2.textContent = "Frequently Asked Questions";
+          const el3 = document.getElementById("cta-title"); if (el3) el3.textContent = "Have Questions?";
+          const el4 = document.getElementById("cta-desc"); if (el4) el4.textContent = "Our team is at your disposal for any further details or to schedule an appointment.";
+          const el5 = document.getElementById("cta-btn"); if (el5) el5.innerHTML = 'Contact Us <i class="bi bi-arrow-right"></i>';
+          // etc... adaugă ID-urile și textele în engleză
         }
         
       };
