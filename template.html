@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ro" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ══ EDITEAZĂ PENTRU FIECARE PAGINĂ ══════════════════════════ -->
+    <title>Titlul Paginii — SPN Popovici &amp; Agachi</title>
+    <meta name="description" content="Descriere SEO specifică acestei pagini, 150-160 caractere." />
+    <meta property="og:title" content="Titlul Paginii — Popovici &amp; Agachi" />
+    <meta property="og:description" content="Descriere Open Graph pentru partajare pe rețele sociale." />
+    <meta property="og:image" content="https://popovicibnp.ro/social-preview.jpg" />
+    <meta property="og:url" content="https://popovicibnp.ro/PAGINA.html" />
+    <!-- ══════════════════════════════════════════════════════════════ -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="apple-mobile-web-app-title" content="SPN Popovici &amp; Agachi" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" type="image/png" href="icons/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="icons/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="icons/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              teal:  { DEFAULT: "#003333", light: "#004d4d", mid: "#00403f" },
+              gold:  { DEFAULT: "#f0cf6f", dark: "#c9a93e", pale: "rgba(240,207,111,0.12)" },
+              cream: { DEFAULT: "#faf8f4", mid: "#f4f1ea" },
+            },
+            fontFamily: {
+              cinzel: ['"Cinzel"', "serif"],
+              inter:  ['"Inter"', "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      media="print" onload="this.media='all'" />
+
+    <style>
+      body { font-family: "Inter", Arial, sans-serif; }
+      h1, h2, h3, h4 { font-family: "Cinzel", serif; letter-spacing: 0.04em; line-height: 1.25; }
+
+      /* ── Navbar underline hover ── */
+      .nav-link { position: relative; }
+      .nav-link::after {
+        content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+        height: 1.5px; background: #f0cf6f;
+        transform: scaleX(0); transform-origin: center; transition: transform 0.25s;
+      }
+      .nav-link:hover::after { transform: scaleX(1); }
+
+      /* ── Page hero (breadcrumb banner) ── */
+      .page-hero {
+        background:
+          linear-gradient(135deg, rgba(0,51,51,0.93) 0%, rgba(0,51,51,0.70) 60%),
+          url("hero.webp") center/cover no-repeat;
+        position: relative;
+      }
+      .page-hero::after {
+        content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #f0cf6f, transparent);
+      }
+
+      /* ── Scrollbar ── */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #faf8f4; }
+      ::-webkit-scrollbar-thumb { background: #c9a93e; border-radius: 3px; }
+    </style>
+  </head>
+
+  <body class="bg-white text-[#1a1a1a] leading-relaxed">
+
+    <!-- ══ COOKIE BANNER ════════════════════════════════════════════ -->
+    <div id="cookie-banner"
+      class="fixed bottom-0 left-0 right-0 bg-teal text-white p-4 z-[1000] border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 hidden">
+      <p class="text-[0.85rem] text-white/80 max-w-4xl">
+        Acest site folosește cookie-uri pentru a vă oferi o experiență de navigare mai bună.
+        Prin continuarea navigării sunteți de acord cu utilizarea acestora.
+        <a href="cookies.html" class="text-gold underline hover:text-gold-dark">Află mai multe</a>.
+      </p>
+      <button onclick="acceptCookies()"
+        class="bg-gold text-teal px-6 py-2 rounded text-[0.85rem] font-bold tracking-wider uppercase hover:bg-gold-dark transition-colors whitespace-nowrap">
+        Am înțeles
+      </button>
+    </div>
+
+    <!-- ══ TOPBAR ════════════════════════════════════════════════════ -->
+    <div class="bg-teal-light py-1.5 text-[0.78rem]">
+      <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <a href="https://www.google.com/maps?cid=6838984055288210912" target="_blank"
+          class="text-white/80 hover:text-gold transition-colors flex items-center gap-1">
+          <i class="bi bi-geo-alt-fill text-gold"></i>
+          Str. Soldat Ghiță Șerban nr. 94, et. 1, Sector 3, București
+        </a>
+      </div>
+    </div>
+
+    <!-- ══ NAVBAR ════════════════════════════════════════════════════ -->
+    <nav id="navbar" class="bg-teal relative z-50 border-b border-gold/10 shadow-[0_2px_16px_rgba(0,0,0,.18)]">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
+
+        <a href="index.html">
+          <img src="icons/logo_lung.svg" alt="SPN Popovici &amp; Agachi" class="h-18 w-auto" width="200" height="72" />
+        </a>
+
+        <!-- Desktop menu -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="index.html"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">ACASĂ</a>
+          <a href="index.html#despre-noi"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">DESPRE NOI</a>
+          <a href="index.html#servicii"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">SERVICII</a>
+
+          <!-- Dropdown Ghiduri Utile -->
+          <div class="relative group">
+            <button class="text-white/80 group-hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors inline-flex items-center gap-1">
+              GHIDURI UTILE <i class="bi bi-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute left-0 top-full hidden group-hover:block bg-teal border border-gold/20 rounded shadow-xl min-w-[220px] py-1">
+              <a href="acte-necesare.html"   class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Acte Necesare Dosare</a>
+              <a href="tarife.html"          class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Tarife &amp; Onorarii</a>
+              <a href="tipuri-acte.html"     class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Ghidul Tipuri de Acte</a>
+              <a href="servicii-conexe.html" class="block px-4 py-2.5 text-sm text-white/80 hover:text-gold hover:bg-teal-light transition-colors">Traduceri &amp; Apostile</a>
+            </div>
+          </div>
+
+          <a href="index.html#contact"
+            class="nav-link text-white/80 hover:text-gold text-[0.9rem] font-semibold tracking-[.08em] uppercase px-3.5 py-2 transition-colors">CONTACT</a>
+
+          <button onclick="toggleLang()" id="langBtn"
+            class="ml-3 border border-gold/50 text-gold hover:bg-gold hover:text-teal text-[0.7rem] font-bold tracking-widest px-2.5 py-1 rounded transition-colors">EN</button>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="menuBtn" onclick="toggleMenu()" aria-label="Deschide meniul principal"
+          class="lg:hidden flex flex-col gap-1.5 p-1">
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar1"></span>
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar2"></span>
+          <span class="w-6 h-0.5 bg-gold block transition-all" id="bar3"></span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="lg:hidden hidden bg-teal border-t border-white/10 px-4 pb-4 max-h-[85vh] overflow-y-auto">
+        <a href="index.html"           onclick="closeMenu()" class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors">ACASĂ</a>
+        <a href="index.html#despre-noi" onclick="closeMenu()" class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors">DESPRE NOI</a>
+        <a href="index.html#servicii"  onclick="closeMenu()" class="block py-3 text-white/85 hover:text-gold border-b border-white/06 text-sm font-semibold tracking-widest uppercase transition-colors">SERVICII</a>
+
+        <div class="border-b border-white/06 py-1 bg-teal-mid/30 px-2 rounded my-1">
+          <a href="acte-necesare.html"   onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Acte Necesare</a>
+          <a href="tarife.html"          onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Tarife &amp; Onorarii</a>
+          <a href="tipuri-acte.html"     onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Ghid Tipuri Acte</a>
+          <a href="servicii-conexe.html" onclick="closeMenu()" class="block py-2 text-white/70 hover:text-gold text-xs font-medium uppercase tracking-wider">─ Traduceri &amp; Apostile</a>
+        </div>
+
+        <a href="index.html#contact" onclick="closeMenu()" class="block py-3 text-white/85 hover:text-gold text-sm font-semibold tracking-widest uppercase transition-colors">CONTACT</a>
+        <button onclick="toggleLang()" id="mobLangBtn"
+          class="mt-3 border border-gold/50 text-gold hover:bg-gold hover:text-teal text-xs font-bold tracking-widest px-3 py-1.5 rounded transition-colors">EN</button>
+      </div>
+    </nav>
+
+    <!-- ══ PAGE HERO (breadcrumb banner) ════════════════════════════
+         Editează: titlul paginii + breadcrumb
+    ══════════════════════════════════════════════════════════════════ -->
+    <section class="page-hero py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex items-center gap-2 text-[0.78rem] text-white/60 font-medium tracking-wide">
+            <li><a href="index.html" class="hover:text-gold transition-colors">Acasă</a></li>
+            <li><i class="bi bi-chevron-right text-gold/50 text-[0.65rem]"></i></li>
+            <!-- ══ EDITEAZĂ breadcrumb-ul ══ -->
+            <li class="text-gold">Titlul Paginii</li>
+          </ol>
+        </nav>
+        <!-- ══ EDITEAZĂ titlul și subtitlul ══ -->
+        <h1 class="text-[clamp(1.7rem,3.5vw,2.6rem)] text-white mb-3">
+          Titlul Paginii
+        </h1>
+        <p class="text-white/70 text-[0.95rem] max-w-xl leading-relaxed">
+          Subtitlu opțional — o propoziție scurtă care descrie conținutul paginii.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ CONȚINUT PRINCIPAL ════════════════════════════════════════
+         Înlocuiește secțiunile de mai jos cu conținutul specific
+         fiecărei pagini. Câteva exemple de layout sunt incluse.
+    ══════════════════════════════════════════════════════════════════ -->
+    <main>
+
+      <!-- ── EXEMPLU: Secțiune simplă cu text ─────────────────────── -->
+      <section class="bg-white py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
+            Titlul Secțiunii
+          </h2>
+          <div class="w-12 h-0.5 bg-gold mt-3 mb-10"></div>
+
+          <p class="text-[0.93rem] text-[#555] leading-[1.85] mb-5">
+            Conținut text al secțiunii. Înlocuiește cu informațiile specifice paginii.
+          </p>
+
+          <!-- ── Sub-secțiune cu iconiță ── -->
+          <div class="flex items-start gap-4 mt-8 p-6 bg-cream rounded border border-[#e8e2d4]">
+            <i class="bi bi-info-circle-fill text-gold text-xl flex-shrink-0 mt-0.5"></i>
+            <div>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-1">Notă importantă</h3>
+              <p class="text-[0.88rem] text-[#666] leading-[1.75]">
+                Text informativ sau avertizare legată de conținutul paginii.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EXEMPLU: Grid de carduri ─────────────────────────────── -->
+      <section class="bg-cream py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
+            Titlul Secțiunii Grid
+          </h2>
+          <div class="w-12 h-0.5 bg-gold mt-3 mb-10"></div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Card — repetă după nevoie -->
+            <div class="bg-white border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
+                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.10)]
+                        transition-all duration-200">
+              <i class="bi bi-file-earmark-text-fill text-[1.6rem] text-gold mb-4 block"></i>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card</h3>
+              <p class="text-[0.87rem] text-[#666] leading-[1.75]">
+                Descriere scurtă a elementului din card.
+              </p>
+            </div>
+
+            <div class="bg-white border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
+                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.10)]
+                        transition-all duration-200">
+              <i class="bi bi-pen-fill text-[1.6rem] text-gold mb-4 block"></i>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card</h3>
+              <p class="text-[0.87rem] text-[#666] leading-[1.75]">
+                Descriere scurtă a elementului din card.
+              </p>
+            </div>
+
+            <div class="bg-white border border-[#e8e2d4] rounded p-7 border-t-[3px] border-t-transparent
+                        hover:border-t-gold hover:-translate-y-1 hover:shadow-[0_6px_28px_rgba(0,51,51,0.10)]
+                        transition-all duration-200">
+              <i class="bi bi-shield-lock-fill text-[1.6rem] text-gold mb-4 block"></i>
+              <h3 class="font-cinzel text-[0.95rem] text-teal mb-2">Titlu Card</h3>
+              <p class="text-[0.87rem] text-[#666] leading-[1.75]">
+                Descriere scurtă a elementului din card.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EXEMPLU: Listă cu acte / pași numerotați ──────────────── -->
+      <section class="bg-white py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-cinzel text-[clamp(1.3rem,2.5vw,1.75rem)] text-teal mb-2">
+            Acte necesare / Pași
+          </h2>
+          <div class="w-12 h-0.5 bg-gold mt-3 mb-10"></div>
+
+          <ol class="space-y-4">
+            <!-- Rând listă — repetă după nevoie -->
+            <li class="flex items-start gap-5 py-5 border-b border-[#e8e2d4] last:border-0">
+              <span class="font-cinzel text-[1.1rem] text-gold min-w-[2rem] mt-0.5">01</span>
+              <div>
+                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului</h3>
+                <p class="text-[0.87rem] text-[#666] leading-[1.75]">
+                  Detalii despre document — în original sau copie, emis de cine etc.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5 border-b border-[#e8e2d4] last:border-0">
+              <span class="font-cinzel text-[1.1rem] text-gold min-w-[2rem] mt-0.5">02</span>
+              <div>
+                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului</h3>
+                <p class="text-[0.87rem] text-[#666] leading-[1.75]">
+                  Detalii despre document.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5 border-b border-[#e8e2d4] last:border-0">
+              <span class="font-cinzel text-[1.1rem] text-gold min-w-[2rem] mt-0.5">03</span>
+              <div>
+                <h3 class="font-cinzel text-[0.93rem] text-teal mb-1">Denumirea Documentului</h3>
+                <p class="text-[0.87rem] text-[#666] leading-[1.75]">
+                  Detalii despre document.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ── EXEMPLU: CTA banner înainte de footer ─────────────────── -->
+      <section class="bg-teal py-16 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-cinzel text-[clamp(1.2rem,2.5vw,1.7rem)] text-white mb-4">
+            Aveți întrebări?
+          </h2>
+          <p class="text-white/70 text-[0.93rem] mb-8 leading-relaxed">
+            Echipa noastră este la dispoziția dumneavoastră pentru orice detaliu suplimentar.
+          </p>
+          <a href="index.html#contact"
+            class="inline-flex items-center gap-2 bg-gold text-teal text-[0.84rem] font-semibold tracking-[.06em] uppercase px-8 py-3 rounded
+                   hover:bg-gold-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(201,169,62,.35)]">
+            Contactați-ne <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </section>
+
+    </main>
+    <!-- ══ SFÂRŞIT CONȚINUT PRINCIPAL ══════════════════════════════ -->
+
+
+    <!-- ══ FOOTER ════════════════════════════════════════════════════ -->
+    <footer class="bg-teal text-white/75 pt-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-[2fr_1fr_1.5fr] gap-12 pb-12">
+
+          <div>
+            <a href="index.html" class="block">
+              <img src="icons/logo_lung.svg" alt="SPN Popovici &amp; Agachi" class="h-18 w-auto" width="200" height="72" />
+            </a>
+            <div class="flex flex-wrap items-center gap-2 mt-4">
+              <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow noopener" class="block">
+                <img src="icons/anpc-sal.svg" alt="ANPC SAL" class="h-14 w-auto object-contain" width="250" height="56" />
+              </a>
+              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow noopener" class="block">
+                <img src="icons/anpc-sol.svg" alt="ANPC SOL" class="h-14 w-auto object-contain" width="250" height="56" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-cinzel text-[0.83rem] tracking-[.13em] uppercase text-gold mb-5">Meniu</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html"            class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Acasă</a></li>
+              <li><a href="index.html#despre-noi" class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Despre Noi</a></li>
+              <li><a href="index.html#servicii"   class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Servicii</a></li>
+              <li><a href="index.html#contact"    class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-cinzel text-[0.83rem] tracking-[.13em] uppercase text-gold mb-5">Informații Utile</h3>
+            <ul class="space-y-2">
+              <li><a href="acte-necesare.html"   class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Acte Necesare Dosare</a></li>
+              <li><a href="tarife.html"           class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Tarife &amp; Onorarii</a></li>
+              <li><a href="tipuri-acte.html"      class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Ghidul Tipuri de Acte</a></li>
+              <li><a href="servicii-conexe.html"  class="text-[0.87rem] text-white/68 hover:text-gold transition-colors">Traduceri &amp; Apostile</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/08 py-5">
+          <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-[0.79rem]">
+            <span>© 2026 Popovici &amp; Agachi — Toate drepturile rezervate</span>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-1 justify-center text-white/45">
+              <a href="termeni.html"           class="hover:text-gold transition-colors">Termeni &amp; Condiții</a>
+              <a href="cookies.html"           class="hover:text-gold transition-colors">Politica Cookies</a>
+              <a href="confidentialitate.html" class="hover:text-gold transition-colors">Politica de Confidențialitate</a>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="http://www.uniuneanotarilor.ro/" target="_blank" rel="nofollow" class="text-white/55 hover:text-gold transition-colors">UNNPR</a>
+              <a href="https://www.cnpb.ro/"            target="_blank" rel="nofollow" class="text-white/55 hover:text-gold transition-colors">CNPB</a>
+              <a href="http://www.infonot.ro/"          target="_blank" rel="nofollow" class="text-white/55 hover:text-gold transition-colors">INFONOT</a>
+              <a href="http://www.ancpi.ro/"            target="_blank" rel="nofollow" class="text-white/55 hover:text-gold transition-colors">ANCPI</a>
+              <a href="https://www.aegrm.ro/"           target="_blank" rel="nofollow" class="text-white/55 hover:text-gold transition-colors">AEGRM</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ══ FLOATING BUTTONS ══════════════════════════════════════════ -->
+    <div class="fixed bottom-12 right-6 z-[999] flex flex-col gap-3">
+      <a href="https://wa.me/40747046863" target="_blank" rel="noopener noreferrer"
+        class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-2xl
+               shadow-[0_4px_20px_rgba(0,0,0,.22)] hover:scale-110 transition-transform"
+        aria-label="Contact pe WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+      <a href="tel:+40747046863"
+        class="w-14 h-14 rounded-full bg-gold text-teal flex items-center justify-center text-xl
+               shadow-[0_4px_20px_rgba(0,0,0,.22)] hover:bg-gold-dark hover:scale-110 transition-transform"
+        aria-label="Sună acum">
+        <i class="bi bi-telephone-fill"></i>
+      </a>
+    </div>
+
+    <!-- ══ JAVASCRIPT ════════════════════════════════════════════════ -->
+    <script>
+      /* ── Mobile menu ── */
+      function toggleMenu() { document.getElementById("mobileMenu").classList.toggle("hidden"); }
+      function closeMenu()  { document.getElementById("mobileMenu").classList.add("hidden"); }
+
+      /* ── Cookie banner ── */
+      if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").classList.remove("hidden");
+      }
+      function acceptCookies() {
+        localStorage.setItem("cookiesAccepted", "true");
+        document.getElementById("cookie-banner").classList.add("hidden");
+      }
+
+      /* ── Language toggle ── */
+      const LANG_LABELS = { ro: "EN", en: "RO" };
+      let lang = localStorage.getItem("lang") || "ro";
+
+      function applyLang() {
+        ["langBtn", "mobLangBtn"].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = LANG_LABELS[lang];
+        });
+        document.documentElement.lang = lang;
+        localStorage.setItem("lang", lang);
+
+        /* ══ ADAUGĂ TRADUCERILE SPECIFICE PAGINII TALE AICI ══
+           Exemplu:
+           document.getElementById("page-title").textContent =
+             lang === "ro" ? "Acte Necesare" : "Required Documents";
+        ═══════════════════════════════════════════════════════ */
+      }
+
+      function toggleLang() {
+        lang = lang === "ro" ? "en" : "ro";
+        applyLang();
+      }
+
+      applyLang();
+    </script>
+  </body>
+</html>
