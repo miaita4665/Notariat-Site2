@@ -232,72 +232,35 @@
 
     <!-- ══ FOOTER — injectat automat din footer.html ════════════════ -->
     <div id="footer-placeholder"></div>
-
-    <!-- ══ JAVASCRIPT ════════════════════════════════════════════════ -->
+<script src="/global.js"></script>
     <script>
-      /* ── Injecție navbar + footer ── */
-      async function loadComponent(url, placeholderId) {
-        try {
-          const res  = await fetch(url);
-          const html = await res.text();
-          document.getElementById(placeholderId).outerHTML = html;
-        } catch (e) {
-          console.warn("Nu s-a putut încărca componenta:", url);
+      window.applyLocalTranslations = function(currentLang) {
+        
+        // --- TRADUCERILE ÎN ROMÂNĂ ---
+        if (currentLang === "ro") {
+          
+          // Exemplu: Traduci titlul paginii
+          const pageTitle = document.getElementById("page-title");
+          if (pageTitle) pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
+          
+          // Exemplu: Traduci un paragraf
+          const pageDesc = document.getElementById("page-desc");
+          if (pageDesc) pageDesc.textContent = "Descrierea serviciului în română.";
+        } 
+        
+        // --- TRADUCERILE ÎN ENGLEZĂ ---
+        else if (currentLang === "en") {
+          
+          // Exemplu: Traduci titlul paginii
+          const pageTitle = document.getElementById("page-title");
+          if (pageTitle) pageTitle.textContent = "English Title for Secondary Page";
+          
+          // Exemplu: Traduci un paragraf
+          const pageDesc = document.getElementById("page-desc");
+          if (pageDesc) pageDesc.textContent = "Service description in English.";
         }
-      }
-
-      Promise.all([
-        loadComponent("navbar.html", "navbar-placeholder"),
-        loadComponent("footer.html",  "footer-placeholder"),
-      ]).then(() => {
-        /* ── Rulează după ce navbar + footer sunt în DOM ── */
-        initNav();
-        initLang();
-        initCookies();
-      });
-
-      /* ── Mobile menu ── */
-      function initNav() {
-        window.toggleMenu = () => document.getElementById("mobileMenu")?.classList.toggle("hidden");
-        window.closeMenu  = () => document.getElementById("mobileMenu")?.classList.add("hidden");
-      }
-
-      /* ── Cookie banner ── */
-      function initCookies() {
-        if (!localStorage.getItem("cookiesAccepted")) {
-          document.getElementById("cookie-banner")?.classList.remove("hidden");
-        }
-        window.acceptCookies = () => {
-          localStorage.setItem("cookiesAccepted", "true");
-          document.getElementById("cookie-banner")?.classList.add("hidden");
-        };
-      }
-
-      /* ── Language toggle ── */
-      let lang = localStorage.getItem("lang") || "ro";
-
-      function initLang() {
-        applyLang();
-        window.toggleLang = () => {
-          lang = lang === "ro" ? "en" : "ro";
-          applyLang();
-        };
-      }
-
-      function applyLang() {
-        const labels = { ro: "EN", en: "RO" };
-        ["langBtn", "mobLangBtn"].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.textContent = labels[lang];
-        });
-        document.documentElement.lang = lang;
-        localStorage.setItem("lang", lang);
-
-        /* ══ ADAUGĂ TRADUCERILE SPECIFICE PAGINII TALE AICI ══
-           document.getElementById("page-title").textContent =
-             lang === "ro" ? "Titlu RO" : "Title EN";
-        ═══════════════════════════════════════════════════════ */
-      }
+        
+      };
     </script>
   </body>
 </html>
