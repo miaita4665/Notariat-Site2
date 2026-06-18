@@ -20,7 +20,7 @@
     />
     <meta name="apple-mobile-web-app-title" content="SPN Popovici & Agachi" />
     <link rel="manifest" href="icons/favicon/site.webmanifest" />
-    <link rel="preload" href="hero.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="hero.webp" as="image" fetchpriority="high" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -205,54 +205,11 @@
         box-shadow: 0 0 0 3px rgba(240, 207, 111, 0.18);
       }
 
-      /* Floating call button */
-      .call-btn {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 999;
-      }
-
-      /* Scrollbar thin */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #faf8f4;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #c9a93e;
-        border-radius: 3px;
-      }
     </style>
+    <link rel="stylesheet" href="default.css" />
   </head>
 
   <body class="bg-white text-[#1a1a1a] leading-relaxed">
-    <div
-      id="cookie-banner"
-      class="fixed bottom-0 left-0 right-0 bg-teal text-white p-4 z-[1000] border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 hidden"
-    >
-      <p class="text-[0.85rem] text-white/80 max-w-4xl">
-        <span id="cookie-text"
-          >Acest site folosește cookie-uri pentru a vă oferi o experiență de
-          navigare mai bună. Prin continuarea navigării sunteți de acord cu
-          utilizarea acestora.</span
-        >
-        <a
-          href="cookies.html"
-          class="text-gold underline hover:text-gold-dark"
-          id="cookie-link"
-          >Află mai multe</a
-        >.
-      </p>
-      <button
-        onclick="acceptCookies()"
-        class="bg-gold text-teal px-6 py-2 rounded text-[0.85rem] font-bold tracking-wider uppercase hover:bg-gold-dark transition-colors whitespace-nowrap"
-        id="cookie-btn"
-      >
-        Am înțeles
-      </button>
-    </div>
     <div id="navbar-placeholder"></div>
     <main>
     <!-- ── HERO ──────────────────────────────────────────────────── -->
@@ -382,7 +339,7 @@
             </h3>
             <p
               class="text-[0.9rem] text-[#666] tracking-[.06em] uppercase"
-              id="notar-role-2"
+              id="notar-role-1"
             >
               Notar Public
             </p>
@@ -1033,36 +990,12 @@
     </section>
     </main>
     <div id="footer-placeholder"></div>
-    <!-- Floating call button -->
-    <div class="fixed bottom-12 right-6 z-[999] flex flex-col gap-3">
-      <a
-        href="https://wa.me/40747046863"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-2xl shadow-[0_4px_20px_rgba(0,0,0,.22)] hover:scale-110 transition-transform"
-        aria-label="Contact pe WhatsApp"
-      >
-        <i class="bi bi-whatsapp"></i>
-      </a>
-      <a
-        href="tel:+40747046863"
-        class="w-14 h-14 rounded-full bg-gold text-teal flex items-center justify-center text-xl shadow-[0_4px_20px_rgba(0,0,0,.22)] hover:bg-gold-dark hover:scale-110 transition-transform"
-        aria-label="Sună acum"
-      >
-        <i class="bi bi-telephone-fill"></i>
-      </a>
-    </div>
     <script src="./global.js"></script>
 
     <script>
       /* ── TRADUCERI SPECIFICE PAGINII PRINCIPALE ── */
       const T = {
         ro: {
-          "cookie-text": "Acest site folosește cookie-uri pentru a vă oferi o experiență de navigare mai bună. Prin continuarea navigării sunteți de acord cu utilizarea acestora.",
-          "cookie-link": "Află mai multe",
-          "cookie-btn": "Am înțeles",
-          "nav-1": "ACASĂ", "nav-2": "DESPRE NOI", "nav-3": "SERVICII", "nav-4": "CONTACT",
-          "mob-nav-1": "ACASĂ", "mob-nav-2": "DESPRE NOI", "mob-nav-3": "SERVICII", "mob-nav-4": "CONTACT",
           "hero-eyebrow": "Societate Profesională Notarială",
           "site-title": "Popovici & Agachi",
           "short-desc": "Oferim servicii notariale de înaltă calitate — autentificări, succesiuni, contracte și legalizări — cu expertiză juridică vastă și o abordare personalizată pentru fiecare client.",
@@ -1077,7 +1010,7 @@
           "why-3-title": "Confidențialitate totală",
           "why-3-text": "Tratăm fiecare dosar cu discreție absolută și atenție maximă, respectând cel mai înalt standard de etică profesională.",
           "notarii-title": "Notarii noștri",
-          "notar-role": "Notar Public",
+          "notar-role-1": "Notar Public",
           "notar-role-2": "Notar Public",
           "servicii-title": "Servicii notariale",
           "svc-1-title": "Autentificări", "svc-1-text": "Autentificarea actelor și declarațiilor în conformitate cu legislația în vigoare.",
@@ -1109,17 +1042,8 @@
           "success-text": "Mesajul a fost trimis cu succes! Vă vom contacta în curând.",
           "submit-btn": "Trimite mesajul",
           "hours-label": "Luni – Vineri:",
-          "footer-menu-title": "Meniu", "footer-info-title": "Informații",
-          "footer-nav-1": "Acasă", "footer-nav-2": "Despre Noi", "footer-nav-3": "Servicii", "footer-nav-4": "Contact",
-          "footer-terms": "Termeni & Condiții", "footer-cookies": "Politica Cookies", "footer-privacy": "Politica de Confidențialitate",
-          "footer-copy": "© 2026 Popovici & Agachi Societate Profesională Notarială — Toate drepturile rezervate",
         },
         en: {
-          "cookie-text": "This site uses cookies to offer you a better browsing experience. By continuing to browse, you agree to their use.",
-          "cookie-link": "Learn more",
-          "cookie-btn": "I understand",
-          "nav-1": "HOME", "nav-2": "ABOUT US", "nav-3": "SERVICES", "nav-4": "CONTACT",
-          "mob-nav-1": "HOME", "mob-nav-2": "ABOUT US", "mob-nav-3": "SERVICES", "mob-nav-4": "CONTACT",
           "hero-eyebrow": "Professional Notarial Society",
           "site-title": "Popovici & Agachi",
           "short-desc": "We offer high-quality notarial services — authentications, successions, contracts, and legalizations — combining extensive legal expertise with a personalised approach for every client.",
@@ -1134,7 +1058,7 @@
           "why-3-title": "Complete Confidentiality",
           "why-3-text": "We treat every file with absolute discretion and maximum care, upholding the highest standard of professional ethics.",
           "notarii-title": "Our Notaries",
-          "notar-role": "Public Notary",
+          "notar-role-1": "Public Notary",
           "notar-role-2": "Public Notary",
           "servicii-title": "Notarial Services",
           "svc-1-title": "Authentications", "svc-1-text": "Authentication of deeds and declarations in accordance with current legislation.",
@@ -1166,10 +1090,6 @@
           "success-text": "Message sent successfully! We will contact you soon.",
           "submit-btn": "Send Message",
           "hours-label": "Monday – Friday:",
-          "footer-menu-title": "Menu", "footer-info-title": "Information",
-          "footer-nav-1": "Home", "footer-nav-2": "About Us", "footer-nav-3": "Services", "footer-nav-4": "Contact",
-          "footer-terms": "Terms & Conditions", "footer-cookies": "Cookie Policy", "footer-privacy": "Privacy Policy",
-          "footer-copy": "© 2026 Popovici & Agachi — All rights reserved",
         }
       };
 

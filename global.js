@@ -35,7 +35,6 @@ function initCookies() {
 }
 
 /* ── TRADUCERI GLOBALE (Navbar, Footer, Cookies) ── */
-/* ── TRADUCERI GLOBALE (Navbar, Footer, Cookies) ── */
 const globalTranslations = {
   ro: {
     "cookie-text": "Acest site folosește cookie-uri pentru a vă oferi o experiență de navigare mai bună. Prin continuarea navigării sunteți de acord cu utilizarea acestora.",
