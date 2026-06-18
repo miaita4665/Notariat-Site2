@@ -1153,7 +1153,10 @@
 
             const formData = new FormData(form);
 
-            fetch(form.action, {
+            const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+            const endpoint = isLocal ? "http://localhost:3000/contact" : form.action;
+
+            fetch(endpoint, {
               method: "POST",
               body: formData,
               headers: { Accept: "application/json" },
