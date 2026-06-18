@@ -176,32 +176,28 @@
     <div id="footer-placeholder"></div>
     <script src="./global.js"></script>
     <script>
-      window.applyLocalTranslations = function (currentLang) {
-        // --- TRADUCERILE ÎN ROMÂNĂ ---
-        if (currentLang === "ro") {
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle)
-            pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
-
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc)
-            pageDesc.textContent = "Descrierea serviciului în română.";
+      const T = {
+        ro: {}, // pagina este deja în română — nimic de schimbat
+        en: {
+          "page-title": "",
+          "page-subtitle": "",
+          "info-text": "",
+          "table-title": "",
+          "th-1": "",
+          "th-2": "",
+          "reductions-title": "",
+          "reductions-text": "",
         }
+      };
 
-        // --- TRADUCERILE ÎN ENGLEZĂ ---
-        else if (currentLang === "en") {
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle)
-            pageTitle.textContent = "English Title for Secondary Page";
-
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc)
-            pageDesc.textContent = "Service description in English.";
-        }
+      window.applyLocalTranslations = function(currentLang) {
+        const d = T[currentLang];
+        if (!d) return;
+        Object.keys(d).forEach(id => {
+          if (!d[id]) return;
+          const el = document.getElementById(id);
+          if (el) el.innerHTML = d[id];
+        });
       };
     </script>
   </body>

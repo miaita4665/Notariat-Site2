@@ -67,9 +67,12 @@
         },
       };
     </script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      media="print"
+      onload="this.media='all'"
     />
     <style>
       body {
@@ -211,32 +214,37 @@
     <div id="footer-placeholder"></div>
     <script src="./global.js"></script>
     <script>
-      window.applyLocalTranslations = function (currentLang) {
-        // --- TRADUCERILE ÎN ROMÂNĂ ---
-        if (currentLang === "ro") {
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle)
-            pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
-
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc)
-            pageDesc.textContent = "Descrierea serviciului în română.";
+      const T = {
+        ro: {}, // pagina este deja în română — nimic de schimbat
+        en: {
+          "page-title": "",
+          "page-subtitle": "",
+          "sec-1-title": "",
+          "sec-1-p1": "",
+          "sec-1-sub": "",
+          "sec-1-li1": "",
+          "sec-1-li2": "",
+          "sec-1-li3": "",
+          "sec-1-li4": "",
+          "sec-2-title": "",
+          "sec-2-p1": "",
+          "sec-2-p2": "",
+          "sec-3-title": "",
+          "sec-3-p1": "",
+          "sec-3-li1": "",
+          "sec-3-li2": "",
+          "sec-3-li3": "",
         }
+      };
 
-        // --- TRADUCERILE ÎN ENGLEZĂ ---
-        else if (currentLang === "en") {
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle)
-            pageTitle.textContent = "English Title for Secondary Page";
-
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc)
-            pageDesc.textContent = "Service description in English.";
-        }
+      window.applyLocalTranslations = function(currentLang) {
+        const d = T[currentLang];
+        if (!d) return;
+        Object.keys(d).forEach(id => {
+          if (!d[id]) return;
+          const el = document.getElementById(id);
+          if (el) el.innerHTML = d[id];
+        });
       };
     </script>
   </body>
