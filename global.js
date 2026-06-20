@@ -49,7 +49,6 @@ const globalTranslations = {
     "footer-menu-title": "Meniu", "footer-info-title": "Informații Utile",
     "footer-nav-1": "Acasă", "footer-nav-2": "Despre Noi", "footer-nav-3": "Servicii", "footer-nav-4": "Contact",
     "footer-info-1": "Acte Necesare Dosare", "footer-info-2": "Tarife & Onorarii", "footer-info-3": "Ghidul Tipuri de Acte", "footer-info-4": "Traduceri & Apostile",
-    "footer-terms": "Termeni & Condiții", "footer-cookies": "Politica Cookies", "footer-privacy": "Politica de Confidențialitate",
     "footer-copy": "© 2026 Popovici & Agachi Societate Profesională Notarială — Toate drepturile rezervate"
   },
   en: {
@@ -65,7 +64,6 @@ const globalTranslations = {
     "footer-menu-title": "Menu", "footer-info-title": "Useful Information",
     "footer-nav-1": "Home", "footer-nav-2": "About Us", "footer-nav-3": "Services", "footer-nav-4": "Contact",
     "footer-info-1": "Required Documents", "footer-info-2": "Fees & Honorariums", "footer-info-3": "Types of Deeds Guide", "footer-info-4": "Translations & Apostilles",
-    "footer-terms": "Terms & Conditions", "footer-cookies": "Cookie Policy", "footer-privacy": "Privacy Policy",
     "footer-copy": "© 2026 Popovici & Agachi — All rights reserved"
   }
 };
