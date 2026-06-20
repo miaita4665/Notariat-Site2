@@ -18,9 +18,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const contactLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minute
-  max: 5,
-  message: { error: "Prea multe cereri. Încercați din nou în 15 minute." },
+  windowMs: 60 * 60 * 1000, // 15 minute
+  max: 3,
+  message: { error: "Prea multe cereri. Încercați din nou peste 60 de minute." },
 });
 
 const transporter = nodemailer.createTransport({

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Notariat</title>
+    <style>
+        /* Design profesional și elegant, potrivit pentru un notariat */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .contact-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 500px;
+            border-top: 4px solid #1a365d; /* Un albastru închis, sobru */
+        }
+
+        .contact-container h2 {
+            margin-top: 0;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1a365d;
+            box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.1);
+        }
+
+        button {
+            width: 100%;
+            background-color: #1a365d;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2a4a7f;
+        }
+
+        button:disabled {
+            background-color: #9ba4b5;
+            cursor: not-allowed;
+        }
+
+        .status-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h2>Contactați-ne</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nume complet</label>
+                <input type="text" id="name" name="name" required placeholder="ex: Ion Popescu">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresă de email</label>
+                <input type="email" id="email" name="email" required placeholder="ex: ion.popescu@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mesajul dumneavoastră</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Scrieți mesajul aici..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Trimiteți mesajul</button>
+        </form>
+
+        <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Oprește trimiterea standard a formularului
+
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('statusMessage');
+
+            // Preluăm datele
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            // Resetăm și afișăm statusul de încărcare
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'status-message'; // Resetăm clasele
+            statusDiv.style.backgroundColor = '#e2e3e5';
+            statusDiv.style.color = '#383d41';
+            statusDiv.innerText = 'Se trimite mesajul...';
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Se procesează...';
+
+            try {
+                // IMPORTANT: Verifică portul să fie același ca în backend (presupunem 3000)
+                const response = await fetch('http://localhost:3000/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.ok) {
+                    // Succes
+                    statusDiv.className = 'status-message status-success';
+                    statusDiv.innerText = 'Mesajul a fost trimis cu succes! Vă vom contacta în scurt timp.';
+                    form.reset(); // Curățăm formularul
+                } else {
+                    // Erori returnate de backend-ul tău (ex: "Adresă de email invalidă", "Prea multe cereri")
+                    statusDiv.className = 'status-message status-error';
+                    statusDiv.innerText = data.error || 'A apărut o eroare necunoscută. Vă rugăm să încercați din nou.';
+                }
+            } catch (error) {
+                console.error('Eroare rețea:', error);
+                statusDiv.className = 'status-message status-error';
+                statusDiv.innerText = 'Eroare de conexiune. Asigurați-vă că serverul rulează.';
+            } finally {
+                // Reactivăm butonul indiferent de rezultat
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Trimiteți mesajul';
+            }
+        });
+    </script>
+
+</body>
+</html>
