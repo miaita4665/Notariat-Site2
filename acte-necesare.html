@@ -235,15 +235,73 @@
     <script src="./global.js"></script>
     <script>
       const T = {
-        ro: {}, // pagina este deja în română — nimic de schimbat
+        ro: {
+          "page-title": "Acte Necesare pentru Proceduri Notariale",
+          "page-subtitle": "Asigurați-vă că aveți toate documentele pregătite pentru a reduce timpul de așteptare la biroul notarial.",
+          "sec-1-title": "Dezbatere Succesiune (Moștenire)",
+          "sec-1-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificat de deces al defunctului (original)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Actele de identitate ale moștenitorilor</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificate de naștere și căsătorie ale moștenitorilor</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Testament (dacă există)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Acte de proprietate bunuri (contracte de vânzare, titluri de proprietate, certificate auto)</li>
+          `,
+          "sec-2-title": "Vânzare / Cumpărare Imobil",
+          "sec-2-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Actele de identitate ale părților (vânzător și cumpărător)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Actul de proprietate asupra imobilului (contract vânzare, donație, etc.)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Documentația cadastrală și încheierea de intabulare</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificat de atestare fiscală (de la Direcția Taxe și Impozite Locale)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Adeverință de la asociația de proprietari și ultima factură de utilități</li>
+          `,
+          "sec-3-title": "Procuri și Declarații",
+          "sec-3-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Actul de identitate al persoanei care semnează procura (mandant)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Copie după actul de identitate al persoanei împuternicite (mandatar)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Detalii specifice bunului (ex: datele mașinii sau imobilului pentru procură auto/imobiliară)</li>
+          `,
+          "sec-4-title": "Divorț pe Cale Notarială",
+          "sec-4-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Actele de identitate ale ambilor soți</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificatul de căsătorie (în original)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificatele de naștere ale soților</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificatele de naștere ale copiilor minori (dacă există)</li>
+          `,
+          "notice": "Atenție: În funcție de particularitățile fiecărui caz, notarul public poate solicita documente suplimentare."
+        },
         en: {
-          "page-title": "",
-          "page-subtitle": "",
-          "sec-1-title": "",
-          "sec-2-title": "",
-          "sec-3-title": "",
-          "sec-4-title": "",
-          "notice": "",
+          "page-title": "Required Documents for Notarial Procedures",
+          "page-subtitle": "Ensure you have all the necessary documents prepared to reduce waiting time at the notary office.",
+          "sec-1-title": "Succession Procedure (Inheritance)",
+          "sec-1-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Death certificate of the deceased (original)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Identity documents of the heirs</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Birth and marriage certificates of the heirs</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Will (if applicable)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Property ownership documents (sales contracts, title deeds, vehicle certificates)</li>
+          `,
+          "sec-2-title": "Sale / Purchase of Real Estate",
+          "sec-2-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Identity documents of the parties (seller and buyer)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Ownership document of the property (sales contract, deed of donation, etc.)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Cadastral documentation and land registry extract</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Tax clearance certificate (from the Local Tax Directorate)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Certificate from the homeowners' association and the latest utility bill</li>
+          `,
+          "sec-3-title": "Powers of Attorney and Declarations",
+          "sec-3-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Identity document of the person signing the power of attorney (principal)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Copy of the identity document of the authorized person (agent)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Specific details of the asset (e.g., vehicle or property data for auto/real estate powers of attorney)</li>
+          `,
+          "sec-4-title": "Notarial Divorce",
+          "sec-4-list": `
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Identity documents of both spouses</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Marriage certificate (original)</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Birth certificates of the spouses</li>
+            <li class="flex items-start gap-2"><i class="bi bi-check2 text-gold font-bold"></i> Birth certificates of minor children (if any)</li>
+          `,
+          "notice": "Attention: Depending on the specifics of each case, the notary public may request additional documents."
         }
       };
 

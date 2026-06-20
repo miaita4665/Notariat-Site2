@@ -56,7 +56,7 @@ const globalTranslations = {
     "cookie-text": "This site uses cookies to offer you a better browsing experience. By continuing to browse, you agree to their use.",
     "cookie-link": "Learn more",
     "cookie-btn": "I understand",
-    "top-address": "94 Soldat Ghita Serban St, 1st Floor, District 3, Bucharest",
+    "top-address": "94 Soldat Ghiță Șerban St, 1st Floor, Sector 3, Bucharest",
     "nav-1": "HOME", "nav-2": "ABOUT US", "nav-3": "SERVICES", "nav-4": "CONTACT",
     "nav-ghiduri": "USEFUL GUIDES",
     "nav-dd-1": "Required Documents", "nav-dd-2": "Fees & Honorariums", "nav-dd-3": "Types of Deeds Guide", "nav-dd-4": "Translations & Apostilles",

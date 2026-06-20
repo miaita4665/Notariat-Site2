@@ -157,32 +157,41 @@
     <div id="footer-placeholder"></div>
     <script src="./global.js"></script>
     <script>
-      window.applyLocalTranslations = function (currentLang) {
-        // --- TRADUCERILE ÎN ROMÂNĂ ---
-        if (currentLang === "ro") {
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle)
-            pageTitle.textContent = "Titlu în Română pentru Pagina Secundară";
-
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc)
-            pageDesc.textContent = "Descrierea serviciului în română.";
+      const T = {
+        ro: {
+          "page-title": "Ghidul Actelor Notariale",
+          "page-subtitle": "Informații și detalii juridice despre principalele documente și proceduri realizate în biroul nostru.",
+          "act-1-title": "1. Acte Autentice (Contracte de Vânzare, Donație)",
+          "act-1-desc": "Autentificarea oferă documentului o forță juridică maximă. Înscrisul autentificat de notar are valoare de probă deplină și, în cazul contractelor care prevăd o sumă de bani sau obligații clare, reprezintă direct <strong>titlu executoriu</strong>.",
+          "act-2-title": "2. Procedura Succesorală (Moștenirea)",
+          "act-2-desc": "Procedura prin care se stabilește masa succesorală (bunurile rămase), numărul și calitatea moștenitorilor și cotele de proprietate ce revin fiecăruia. Finalitatea acestei proceduri este emiterea <strong>Certificatului de Moștenitor</strong>.",
+          "act-3-title": "3. Procuri Speciale și Delegații",
+          "act-3-desc": "Prin procură, o persoană (mandant) împuternicește o altă persoană (mandatar) să încheie acte juridice în numele său. Procurile pot fi speciale (pentru o singură operațiune clară, ex: ridicarea unei pensii, vânzarea unui vehicul) sau generale.",
+          "act-4-title": "4. Legalizări și Certificări",
+          "act-4-desc": "Includ legalizarea copiilor după înscrisuri oficiale, legalizarea semnăturii traducătorului autorizat, darea de dată certă pe un document pentru a-i bloca vechimea sau certificarea unor fapte constatate direct de către notarul public."
+        },
+        en: {
+          "page-title": "Guide to Notarial Acts",
+          "page-subtitle": "Information and legal details about the main documents and procedures handled in our office.",
+          "act-1-title": "1. Authentic Acts (Sales Contracts, Donations)",
+          "act-1-desc": "Authentication provides the document with maximum legal force. A document authenticated by a notary has full evidentiary value and, in the case of contracts stipulating a sum of money or clear obligations, directly represents an <strong>enforceable title</strong>.",
+          "act-2-title": "2. Succession Procedure (Inheritance)",
+          "act-2-desc": "The procedure that determines the estate (remaining assets), the number and capacity of the heirs, and the ownership shares due to each. The culmination of this procedure is the issuance of the <strong>Heir Certificate</strong>.",
+          "act-3-title": "3. Special Powers of Attorney and Delegations",
+          "act-3-desc": "Through a power of attorney, a person (the principal) authorizes another person (the agent) to conclude legal acts on their behalf. Powers of attorney can be special (for a single clear operation, e.g., collecting a pension, selling a vehicle) or general.",
+          "act-4-title": "4. Legalizations and Certifications",
+          "act-4-desc": "These include legalizing copies of official documents, legalizing the signature of an authorized translator, providing a certain date to a document to freeze its age, or certifying facts directly ascertained by the notary public."
         }
+      };
 
-        // --- TRADUCERILE ÎN ENGLEZĂ ---
-        else if (currentLang === "en") {
-          // Exemplu: Traduci titlul paginii
-          const pageTitle = document.getElementById("page-title");
-          if (pageTitle)
-            pageTitle.textContent = "English Title for Secondary Page";
-
-          // Exemplu: Traduci un paragraf
-          const pageDesc = document.getElementById("page-desc");
-          if (pageDesc)
-            pageDesc.textContent = "Service description in English.";
-        }
+      window.applyLocalTranslations = function(currentLang) {
+        const d = T[currentLang];
+        if (!d) return;
+        Object.keys(d).forEach(id => {
+          if (!d[id]) return;
+          const el = document.getElementById(id);
+          if (el) el.innerHTML = d[id];
+        });
       };
     </script>
   </body>
