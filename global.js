@@ -64,7 +64,7 @@ const globalTranslations = {
     "footer-menu-title": "Menu", "footer-info-title": "Useful Information",
     "footer-nav-1": "Home", "footer-nav-2": "About Us", "footer-nav-3": "Services", "footer-nav-4": "Contact",
     "footer-info-1": "Required Documents", "footer-info-2": "Fees & Honorariums", "footer-info-3": "Types of Deeds Guide", "footer-info-4": "Translations & Apostilles",
-    "footer-copy": "© 2026 Popovici & Agachi — All rights reserved"
+    "footer-copy": "© 2026 Popovici & Agachi Professional Partnerhsip of Notaries — All rights reserved"
   }
 };
 
