@@ -43,12 +43,12 @@ const globalTranslations = {
     "top-address": "Str. Soldat Ghiță Șerban nr. 94, et. 1, Sector 3, București",
     "nav-1": "ACASĂ", "nav-2": "DESPRE NOI", "nav-3": "SERVICII", "nav-4": "CONTACT",
     "nav-ghiduri": "INFORMAȚII UTILE",
-    "nav-dd-1": "Acte Necesare Dosare", "nav-dd-2": "Tarife & Onorarii", "nav-dd-3": "Ghidul Tipuri de Acte", "nav-dd-4": "Traduceri & Apostile",
+    "nav-dd-1": "Acte Necesare ", "nav-dd-2": "Taxe & Onorarii Notariale", "nav-dd-3": " Tipuri de Acte", "nav-dd-4": "Traduceri & Apostile",
     "mob-nav-1": "ACASĂ", "mob-nav-2": "DESPRE NOI", "mob-nav-3": "SERVICII", "mob-nav-4": "CONTACT",
-    "mob-dd-1": "─ Acte Necesare", "mob-dd-2": "─ Tarife & Onorarii", "mob-dd-3": "─ Ghid Tipuri Acte", "mob-dd-4": "─ Traduceri & Apostile",
+    "mob-dd-1": "─ Acte Necesare", "mob-dd-2": "─ Taxe & Onorarii Notariale", "mob-dd-3": "─ Ghid Tipuri Acte", "mob-dd-4": "─ Traduceri & Apostile",
     "footer-menu-title": "Meniu", "footer-info-title": "Informații Utile",
     "footer-nav-1": "Acasă", "footer-nav-2": "Despre Noi", "footer-nav-3": "Servicii", "footer-nav-4": "Contact",
-    "footer-info-1": "Acte Necesare Dosare", "footer-info-2": "Tarife & Onorarii", "footer-info-3": "Ghidul Tipuri de Acte", "footer-info-4": "Traduceri & Apostile",
+    "footer-info-1": "Acte Necesare ", "footer-info-2": "Taxe & Onorarii Notariale", "footer-info-3": " Tipuri de Acte", "footer-info-4": "Traduceri & Apostile",
     "footer-copy": "© 2026 Popovici & Agachi Societate Profesională Notarială — Toate drepturile rezervate"
   },
   en: {
@@ -58,12 +58,12 @@ const globalTranslations = {
     "top-address": "94 Soldat Ghiță Șerban St, 1st Floor, Sector 3, Bucharest",
     "nav-1": "HOME", "nav-2": "ABOUT US", "nav-3": "SERVICES", "nav-4": "CONTACT",
     "nav-ghiduri": "USEFUL INFORMATION",
-    "nav-dd-1": "Required Documents", "nav-dd-2": "Fees & Honorariums", "nav-dd-3": "Types of Deeds Guide", "nav-dd-4": "Translations & Apostilles",
+    "nav-dd-1": "Required Documents", "nav-dd-2": "Taxes  ", "nav-dd-3": "Deed Types", "nav-dd-4": "Translations & Apostilles",
     "mob-nav-1": "HOME", "mob-nav-2": "ABOUT US", "mob-nav-3": "SERVICES", "mob-nav-4": "CONTACT",
-    "mob-dd-1": "─ Required Docs", "mob-dd-2": "─ Fees & Honorariums", "mob-dd-3": "─ Types of Deeds", "mob-dd-4": "─ Translations",
+    "mob-dd-1": "─ Required Docs", "mob-dd-2": "─  Taxes & Notarial fees", "mob-dd-3": "─ Types of Deeds", "mob-dd-4": "─ Translations",
     "footer-menu-title": "Menu", "footer-info-title": "Useful Information",
     "footer-nav-1": "Home", "footer-nav-2": "About Us", "footer-nav-3": "Services", "footer-nav-4": "Contact",
-    "footer-info-1": "Required Documents", "footer-info-2": "Fees & Honorariums", "footer-info-3": "Types of Deeds Guide", "footer-info-4": "Translations & Apostilles",
+    "footer-info-1": "Required Documents", "footer-info-2": "Taxes & Notarial fees", "footer-info-3": "Deed Types ", "footer-info-4": "Translations & Apostilles",
     "footer-copy": "© 2026 Popovici & Agachi Professional Partnerhsip of Notaries — All rights reserved"
   }
 };
